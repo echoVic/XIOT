@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>XIot云平台注册帐号</title>
+		<link rel="stylesheet" type="text/css" href="css/register.css" />
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link href='//cdn.webfont.youziku.com/webfonts/nomal/97275/41243/586c93e4f629d80af416baae.css' rel='stylesheet' type='text/css' />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+
+		<div class="g-doc">
+			<div class="g-hd">
+				<div class="g-hdc">
+					<div class="m-head">
+						<div class="logo">
+							<a href="https://app.netease.im/index" class="link"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="g-bd">
+				<div class="g-bdc">
+					<div class="tab-nav">
+						<ul class="nav nav-tabs" role="tablist" id="myTab">
+							<li role="presentation" class="active">
+								<a href="#individual" role="tab" data-toggle="tab">个人用户</a>
+							</li>
+							<li role="presentation">
+								<a href="#business" role="tab" data-toggle="tab">企业用户</a>
+							</li>
+						</ul>
+					</div>
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active" id="individual">
+							<div id="register">
+								<div class="wrap-content">
+									<div class="content-title css80d4afab717bfb">
+										XIOT云平台注册
+									</div>
+									<div class="content-main">
+										<div class="con-wrap">
+											<form class="register-form" name="regform">
+												
+													<div class="reg-item">
+														<div class="input-label">
+															<label>用户名:</label>
+															<i class="require"></i>
+														</div>																																				
+														<input type="text" name="user" class="outline-input text-user" placeholder="用户名">																										
+																									
+														<li class="tip-info user-info"></li>
+													</div>
+													
+													
+													<div class="reg-item">
+															<div class="input-label">
+																<label>密码:</label>
+																<i class="require"></i>
+															</div>	
+															<input type="password" name="passwd" class="outline-input text-passwd" placeholder="密码">
+																												
+														<li class="tip-info passwd-info"></li>	
+														
+													</div>
+													
+													<div class="reg-item">
+															<div class="input-label">
+																<label>确认密码:</label>
+																<i class="require"></i>
+															</div>	
+															<input type="password" name="passwd2" class="outline-input text-passwd2" placeholder="确认密码">
+														
+															<li class="tip-info passwd2-info"></li>
+													</div>
+													
+													<div class="reg-item">
+															<div class="input-label">
+																<label>所在地:</label>
+																<i class="require" style="display: none;"></i>
+															</div>	
+																<select class="location-sel s_province" id="s_province" name="s_province"></select>  
+															    <select class="location-sel s_city" id="s_city" name="s_city" ></select>  
+															    <select class="location-sel s_county" id="s_county" name="s_county"></select>
+															    <script class="resources library" src="js/area.js" type="text/javascript"></script>
+															
+															    <script type="text/javascript">_init_area();</script>						
+															
+															<li class="tip-info location-info"></li>
+													</div>
+													
+													<div class="reg-item">
+															<div class="input-label">
+																<label>邮箱:</label>
+																<i class="require"></i>
+															</div>															
+															<input id="email" type="text" name="email" class="outline-input text-email" placeholder="邮箱">
+														
+															<li class="tip-info email-info"></li>
+													</div>
+													
+													<div class="reg-item">
+															<div class="input-label">
+																<label>图片验证码:</label>
+																<i class="require"></i>
+															</div>
+															<input id="textpkey" type="text" name="pkey" class="outline-input text-pkey" placeholder="图片验证码">
+															<img class="photokey" title="更换图片" src="http://localhost:8080/Xiot/user/getCode"/>
+															<li class="tip-info pkey-info"></li>
+													</div>
+													
+													<div class="reg-item">
+															<div class="input-label">
+																<label>邮箱验证码:</label>
+																<i class="require"></i>
+															</div>
+															<input type="text" name="mkey" class="outline-input text-mkey" placeholder="邮箱验证码">
+															<button id="mkeybtn" type="button" class="reg-btn mkey-btn" disabled="disabled">获取验证码</button>
+															<li class="tip-info mkey-info"></li>
+													</div>													
+				
+													<div class="reg-item">
+														<input id="register-btn" type="button" class="reg-btn check-account" value="注册">
+													</div>
+												
+											</form>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane fade" id="business">
+							<div id="register">
+								<div class="wrap-content">
+									<div class="content-title css80d4afab717bfb">
+										XIOT云平台注册
+									</div>
+									<div class="content-main">
+										<div class="con-wrap">
+											<form class="register-form" name="regform">
+												<section class="account-info">
+													<div class="setn-title">
+														<span class="account-icon"></span>
+														<span>帐号信息</span>
+													</div>
+													<div class="reg-item">
+														<div class="input-label">
+															<label>用户名:</label>
+															<i class="require"></i>
+														</div>																																				
+														<input type="text" name="couser" class="outline-input text-co-user" placeholder="用户名">																										
+																									
+														<li class="tip-info co-user-info"></li>
+													</div>
+													
+													<div class="reg-item">
+															<div class="input-label">
+																<label>密码:</label>
+																<i class="require"></i>
+															</div>	
+															<input type="password" name="copasswd" class="outline-input co-text-passwd" placeholder="密码">
+																												
+														<li class="tip-info co-passwd-info"></li>	
+													</div>
+													
+													<div class="reg-item">
+															<div class="input-label">
+																<label>确认密码:</label>
+																<i class="require"></i>
+															</div>	
+															<input type="password" name="copasswd2" class="outline-input co-text-passwd2" placeholder="确认密码">
+														
+															<li class="tip-info co-passwd2-info"></li>
+													</div>
+													
+												</section>
+													
+												<section class="company-info">
+													<div class="setn-title">
+														<span class="account-icon" style="background-image: url(images/company-icon.png);"></span>
+														<span>企业信息</span>
+													</div>
+													
+													<div class="reg-item">
+														<div class="input-label">
+															<label>企业名称:</label>
+															<i class="require"></i>
+														</div>																																				
+														<input type="text" name="coname" class="outline-input text-coname" placeholder="企业名称">																										
+																									
+														<li class="tip-info co-name-info"></li>
+													</div>
+													
+													<div class="reg-item">
+															<div class="input-label">
+																<label>企业所在地:</label>
+																<i class="require"></i>
+															</div>	
+																<select class="location-sel s_province" id="s1_province" name="s1_province"></select>  
+															    <select class="location-sel s_city" id="s1_city" name="s1_city" ></select>  
+															    <select class="location-sel s_county" id="s1_county" name="s1_county"></select>
+															    <script class="resources library" src="js/area1.js" type="text/javascript"></script>
+															
+															    <script type="text/javascript">_init_area();</script>		
+
+															
+															<li class="tip-info co-location-info"></li>
+													</div>
+													
+													<div class="reg-item">
+														<div class="input-label">
+															<label>详细地址:</label>
+															<i class="require" style="display: none;"></i>
+														</div>																																				
+														<input type="text" name="fulladdress" class="outline-input text-fulladdress" placeholder="不需要重复填写省市区，不少于5个字">																										
+																									
+														<li class="tip-info fulladdress-info"></li>
+													</div>
+													
+													<div class="reg-item">
+														<div class="input-label">
+															<label>所属行业:</label>
+															<i class="require" style="display: none;"></i>
+														</div>
+														
+														 <select name="industry" id="industry" class="text-industry">
+                            								<option value="">选择行业</option>
+                                                            <option value="1">计算机硬件及网络设备</option>
+                                                            <option value="2">计算机软件</option>
+                                                            <option value="3">IT服务（系统/数据/维护）</option>
+                                                            <option value="4">互联网/电子商务</option>
+                                                            <option value="5">通讯（设备/运营/增资服务）</option>
+                                                            <option value="6">电子技术/半导体/集成电路</option>
+                                                            <option value="7">仪器仪表</option>
+                                                            <option value="8">工业自动化</option>
+                                                            <option value="9">大型设备/机电设备/重工业</option>
+                                                            <option value="10">医疗设备/器械</option>
+                                                            <option value="11">能源/矿产/采掘/冶炼</option>
+                                                            <option value="12">耐用消费品（服装服饰/纺织/皮革/家具/家电）</option>
+                                                            <option value="13">家居/室内设计/装饰装潢</option>
+                                                            <option value="14">加工制造</option>
+                                                            <option value="15">汽车/摩托车</option>
+                                                            <option value="16">交通/物流/运输</option>
+                                                            <option value="17">网络游戏</option>
+                                                            <option value="18">电气/电力/水利</option>
+                                                            <option value="19">石油/石化/化工</option>
+                                                            <option value="20">办公用品及设备</option>
+                                                            <option value="21">礼品/玩具/工艺美术/收藏品</option>
+                                                            <option value="22">快速消费品（食品/饮料/烟酒/化妆品）</option>
+                                                            <option value="23">金融/银行/投资/基金/证据</option>
+                                                            <option value="24">保险</option>
+                                                            <option value="25">房地产/建筑/建材/工程</option>
+                                                            <option value="26">物业管理/商业中心</option>
+                                                            <option value="27">广告/会展/公关/市场推广</option>
+                                                            <option value="28">媒体/出版/影视/文化/艺术</option>
+                                                            <option value="29">印刷/包装/造纸</option>
+                                                            <option value="30">咨询/管理产业/法律/财会</option>
+                                                            <option value="31">教育/培训</option>
+                                                            <option value="32">检验/检测/认证</option>
+                                                            <option value="33">中介服务</option>
+                                                            <option value="34">贸易/进出口</option>
+                                                            <option value="35">零售/批发</option>
+                                                            <option value="36">医药/生物工程</option>
+                                                            <option value="37">医疗/护理/美容/保健</option>
+                                                            <option value="38">酒店/餐饮</option>
+                                                            <option value="39">娱乐/休闲/体育</option>
+                                                            <option value="40">旅游/度假</option>
+                                                            <option value="41">航空/航天</option>
+                                                            <option value="42">学术/科研</option>
+                                                            <option value="43">政府/公共事业/非盈利机构</option>
+                                                            <option value="44">环保</option>
+                                                            <option value="45">农/林/牧/渔</option>
+                                                            <option value="46">跨领域经营</option>
+                                                            <option value="47">其它</option>
+                                                   </select>																													
+																									
+														<li class="tip-info industry-info"></li>
+													</div>
+													
+												</section>	
+												
+												<section class="contact-info">
+													<div class="setn-title">
+														<span class="account-icon" style="background-image: url(images/contact-icon.png);"></span>
+														<span>联系人信息</span>
+													</div>
+													
+													<div class="reg-item">
+														<div class="input-label">
+															<label>企业联系人:</label>
+															<i class="require" style="display: none;"></i>
+														</div>																																				
+														<input type="text" name="contact" class="outline-input text-contact" placeholder="企业联系人">																										
+																									
+														<li class="tip-info contact-info"></li>
+													</div>
+													
+													<div class="reg-item">
+														<div class="input-label">
+															<label>所属部门:</label>
+															<i class="require" style="display: none;"></i>
+														</div>																																				
+														<input type="text" name="department" class="outline-input text-department" placeholder="所属部门">																										
+																									
+														<li class="tip-info department-info"></li>
+													</div>
+													
+													<div class="reg-item">
+														<div class="input-label">
+															<label>联系电话:</label>
+															<i class="require" style="display: none;"></i>
+														</div>																																				
+														<input type="text" name="contacttel" class="outline-input text-contacttel" placeholder="联系电话">																										
+																									
+														<li class="tip-info contacttel-info"></li>
+													</div>
+													
+													<div class="reg-item">
+															<div class="input-label">
+																<label>联系邮箱:</label>
+																<i class="require"></i>
+															</div>															
+															<input id="contactemail"  type="text" name="contactemail" class="outline-input text-contactemail" placeholder="邮箱">
+														
+															<li class="tip-info contactemail-info"></li>
+													</div>
+													
+													<div class="reg-item">
+															<div class="input-label">
+																<label>图片验证码:</label>
+																<i class="require"></i>
+															</div>
+															<input id="cotextpkey" type="text" name="copkey" class="outline-input text-pkey" placeholder="图片验证码">
+															<img class="photokey" title="更换图片" src="http://localhost:8080/Xiot/user/getCode"/>
+															<li class="tip-info co-pkey-info"></li>
+													</div>
+													
+													<div class="reg-item">
+															<div class="input-label">
+																<label>邮箱验证码:</label>
+																<i class="require"></i>
+															</div>
+															<input type="text" name="comkey" class="outline-input text-mkey" placeholder="邮箱验证码">
+															<button id="comkeybtn" type="button" class="reg-btn mkey-btn" disabled="disabled">获取验证码</button>
+															<li class="tip-info co-mkey-info"></li>
+													</div>		
+												</section>
+																								
+				
+													<div class="reg-item">
+														<input id="co-register-btn" type="button" class="reg-btn check-account" value="注册">
+													</div>
+												
+											</form>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<script src="js/register.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

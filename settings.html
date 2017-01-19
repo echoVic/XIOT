@@ -106,7 +106,8 @@
 					//  修改密码
 				$("#updatepw-btn").click(function(){
 					var fr = document.setform;
-					var loginName = fr.user;
+					var loginName = fr.user.value;
+					console.log(loginName)
 					var oldpsw = fr.oldpsw.value.trim();
 					var newpsw = fr.newpsw.value.trim();
 					
@@ -151,12 +152,14 @@
 					$.ajax({
 						async: true,
 						type: "POST",
-						url: "user/updatPWD",
+						url: "user/updatePWD",
 						data: updatepsw,
 						dataType: 'json',
 						success: function(data) {
-							$(".newpsw2-info").html("修改成功！")
-							setTimeout("window.location.href='login.html'",3000);
+							if (data.status == "SUCCESS") {
+								$(".newpsw2-info").html("修改成功！")
+								setTimeout("window.location.href='login.html'",3000);
+							}
 						}
 					});
 				})

@@ -257,7 +257,9 @@
 							var legalPerson = result.legalPerson;
 							var industry = result.industry;
 							var address = result.address;
-							var address2 = result.address2;
+							var add_array = address.toString().split(" ");
+							var location = add_array[0];
+							var detailadd = add_array[1];
 							var contacts = result.contacts;
 							var department = result.department;
 							var intro = result.intro;
@@ -286,14 +288,14 @@
 								$(".text-industry").val('无');
 							}							
 							
-							if(address) {
-								$(".text-location").val(address);
+							if(location) {
+								$(".text-location").val(location);
 							} else {
 								$(".text-location").val('无');
 							}
 							
-							if(address2) {
-								$(".text-detailadd").val(address2);
+							if(detailadd) {
+								$(".text-detailadd").val(detailadd);
 							} else {
 								$(".text-detailadd").val('无');
 							}
@@ -334,7 +336,7 @@
 					var edit_industry = fr_edit.industry.value;	
 					
 					var edit_location = fr_edit.location.value;
-					var location_array = edit_location.toString().split(" ")
+					var location_array = edit_location.toString().split("-")
 					var edit_lo_province = location_array[0];
 					var edit_lo_city = location_array[1];
 					var edit_lo_county = location_array[2];					
@@ -419,8 +421,9 @@
 					var lo_province = $("#s_province option:selected").val();
 					var lo_city = $("#s_city option:selected").val();
 					var lo_county = $("#s_county option:selected").val();
-					var location = lo_province + ' ' + lo_city + ' ' + lo_county;
+					var location = lo_province + '-' + lo_city + '-' + lo_county;
 					var detailadd = fr.detailadd.value;
+					var address = location + " " + detailadd;
 					var summary = fr.summary.value;
 					var contact = fr.contact.value;
 					var department = fr.department.value;
@@ -506,8 +509,7 @@
 						companyName: company,
 						legalPerson: corporation,
 						industry: industry,
-						address: location,
-						address2: detailadd,
+						address: address,
 						intro: summary,
 						contacts: contact,
 						department: department,						

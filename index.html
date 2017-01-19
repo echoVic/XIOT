@@ -367,55 +367,57 @@
 				$().UItoTop({
 					easingType: 'easeOutQuart'
 				});
+				
+				function GetQueryString(name) {
+				   var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
+				   var r = window.location.search.substr(1).match(reg);
+				   if (r!=null) return (r[2]); return null;
+				}
+				var userName = GetQueryString("userName");
+				var role = GetQueryString("role");
+				console.log(userName,role);
+				if ((userName != "null") && (userName != "") && (userName != null)) {
+					$(".lrbutton").addClass("hidden");
+					$("#devcenter").removeClass("hidden");
+					$("#username").html(userName);
+				}
+				
+				$("#index").click(function(){
+					window.location.href = "index.html?role=" + role + "&userName=" + userName; 
+				})
+				$("#case").click(function(){
+					window.location.href = "case.html?role=" + role + "&userName=" + userName; 
+				})
+				$("#discover").click(function(){
+					window.location.href = "discover.html?role=" + role + "&userName=" + userName; 
+				})
+				$("#doc").click(function(){
+					window.location.href = "doc.html?role=" + role + "&userName=" + userName; 
+				})
+				
+				$("#infoedit").click(function(){
+					if (role == 0) {
+						window.location.href = "perinfo.html?userName=" + userName; 
+					} else if (role == 1) {
+						window.location.href = "cominfo.html?userName=" + userName; 
+					}
+				})
+				$("#setting").click(function(){				
+						window.location.href = "settings.html?userName=" + userName; 
+				})
+				$("#logout").click(function(){
+					$.ajax({
+						type:"post",
+						url:"user/logout",
+						async:true,
+						success:function(data){
+							window.location.href="index.html";
+						}
+					});
+				})
 			});
 			
-			function GetQueryString(name) {
-			   var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
-			   var r = window.location.search.substr(1).match(reg);
-			   if (r!=null) return (r[2]); return null;
-			}
-			var userName = GetQueryString("userName");
-			var role = GetQueryString("role");
-			console.log(userName,role);
-			if ((userName != "null") && (userName != "") && (userName != null)) {
-				$(".lrbutton").addClass("hidden");
-				$("#devcenter").removeClass("hidden");
-				$("#username").html(userName);
-			}
 			
-			$("#index").click(function(){
-				window.location.href = "index.html?role=" + role + "&userName=" + userName; 
-			})
-			$("#case").click(function(){
-				window.location.href = "case.html?role=" + role + "&userName=" + userName; 
-			})
-			$("#discover").click(function(){
-				window.location.href = "discover.html?role=" + role + "&userName=" + userName; 
-			})
-			$("#doc").click(function(){
-				window.location.href = "doc.html?role=" + role + "&userName=" + userName; 
-			})
-			
-			$("#infoedit").click(function(){
-				if (role == 0) {
-					window.location.href = "perinfo.html?userName=" + userName; 
-				} else if (role == 1) {
-					window.location.href = "cominfo.html?userName=" + userName; 
-				}
-			})
-			$("#setting").click(function(){				
-					window.location.href = "settings.html?userName=" + userName; 
-			})
-			$("#logout").click(function(){
-				$.ajax({
-					type:"post",
-					url:"user/logout",
-					async:true,
-					success:function(data){
-						window.location.href="index.html";
-					}
-				});
-			})
 		</script>
 		<a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 		<!---->

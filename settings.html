@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>安全设置</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/settings.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="g-doc">
+			<div class="g-hd">
+				<div class="g-hdc">
+					<div class="m-head">
+						<div class="logo">
+							<a href="index.html" class="link"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="g-bd">
+				<div class="g-bdc">
+					<div id="settings">
+						<div class="wrap-content">
+							<div class="content-title">
+								安全设置
+							</div>
+							<div class="content-main">
+								<div class="con-wrap">
+									<form class="settings-form" name="setform">									
+										<div id="updatepw">
+											<div class="reg-item">
+												<div class="input-label">
+													<label>用户名:</label>
+												</div>
+												<input disabled="disabled" type="text" name="user" class="outline-input text-user">
+	
+												<li class="tip-info user-info"></li>
+											</div>
+											
+											<div class="reg-item">
+												<div class="input-label">
+													<label>旧密码:</label>
+													<i class="require"></i>
+												</div>
+												<input type="password" name="oldpsw" class="outline-input text-oldpsw" placeholder="请输入旧密码" autocomplete="off">
+	
+												<li class="tip-info oldpsw-info"></li>
+	
+											</div>
+											
+											<div class="reg-item">
+												<div class="input-label">
+													<label>新密码:</label>
+													<i class="require"></i>
+												</div>
+												<input type="password" name="newpsw" class="outline-input text-newpsw" placeholder="请输入新密码" autocomplete="off">
+	
+												<li class="tip-info newpsw-info"></li>
+	
+											</div>
+
+											<div class="reg-item">
+													<div class="input-label">
+														<label>确认密码:</label>
+														<i class="require"></i>
+													</div>
+													<input type="password" name="newpsw2" class="outline-input text-newpsw2" placeholder="请再次输入新密码" autocomplete="off">
+	
+													<li class="tip-info newpsw2-info"></li>
+											</div>
+											
+											<div class="reg-item">
+												<input id="updatepw-btn" type="button" class="reg-btn check-account" value="保存">
+											</div>
+										</div>
+									</form>													
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">		
+			$(document).ready(function(){
+				// 从url中获取用户名
+				function GetQueryString(name) {
+			   		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
+			   		var r = window.location.search.substr(1).match(reg);
+			   		if (r!=null) return (r[2]); return null;
+				}
+				var userName = GetQueryString("userName");
+				$('.text-user').val(userName);
+				
+				// 输入框绑定enter键
+				$(":input").bind('keypress', function(event) {
+					if(event.keyCode == "13") {
+						$(".check-account").click();
+					}
+				});
+					//  修改密码
+				$("#updatepw-btn").click(function(){
+					var fr = document.setform;
+					var loginName = fr.user;
+					var oldpsw = fr.oldpsw.value.trim();
+					var newpsw = fr.newpsw.value.trim();
+					
+					if(oldpsw == "") {
+						$(".oldpsw-info").html("请输入旧密码！");
+						fr.oldpsw.focus();
+						return false;
+					} else {
+						$(".oldpsw-info").html("");
+					}
+					
+					if(oldpsw == newpsw) {
+						$(".newpsw-info").html("必须和旧密码不同！");
+						fr.newpsw.focus();
+						return false;
+					} else {
+						$(".newpsw-info").html("");
+					}
+					
+					if(newpsw == "") {
+						$(".newpsw-info").html("新密码不能为空！");
+						fr.newpsw.focus();
+						return false;
+					} else {
+						$(".newpsw-info").html("");
+					}
+
+					if(fr.newpsw.value != fr.newpsw2.value) {
+						$(".newpsw2-info").html("两次输入的密码不一致！");
+						fr.newpsw2.focus();
+						return false;
+					} else {
+						$(".newpsw2-info").html("");
+					}
+					
+					var updatepsw = {
+						oldPassword: oldpsw,
+						password: newpsw,
+						userName: loginName
+					}
+					
+					$.ajax({
+						async: true,
+						type: "POST",
+						url: "user/updatPWD",
+						data: updatepsw,
+						dataType: 'json',
+						success: function(data) {
+							$(".newpsw2-info").html("修改成功！")
+							setTimeout("window.location.href='login.html'",3000);
+						}
+					});
+				})
+			})
+		</script>
+	</body>
+</html>

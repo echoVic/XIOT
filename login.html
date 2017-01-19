@@ -58,7 +58,7 @@
 															</div>
 														</div>
 
-														<input id="name" type="text" autocomplete="off" placeholder="用户名/手机/邮箱" class="curs-input curs-input-lb" name="account" value="">
+														<input id="name" type="text" autocomplete="off" placeholder="用户名/手机/邮箱" class="curs-input curs-input-lb" name="account">
 
 														<!--RegularC if3-->
 
@@ -82,7 +82,7 @@
 															</div>
 														</div>
 
-														<input id="psw" autocomplete="off" placeholder="密码" class="curs-input curs-input-lb" type="password" name="password" value="">
+														<input id="psw" autocomplete="off" placeholder="密码" class="curs-input curs-input-lb" type="password" name="password">
 
 														<!--RegularC if8-->
 
@@ -214,13 +214,12 @@
 									$(".curs-u-info").css("display","block").html("请输入正确的用户名和密码！");
 			 		                return false;  
 			 		            }
-			    				 
-//			    				 else if(status== "nokey"){
-//			    					 $(".quc-tip").addClass("quc-tip-error").html("密码不正确！");
-//			    					 return false;
-//			    					 
-//			    				 }		    				 
-			    				 window.location.href="index.html";
+			    				 var result =data.result;
+			    				 var result = eval("("+result+")")
+			    				 console.log(result);
+			    				 console.log(result.userName,result.role);
+			 
+			    				 window.location.href="index.html?role=" + result.role + "&userName=" + result.userName;
 							}
 			    		 });	 
 

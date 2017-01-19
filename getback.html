@@ -1,9 +1,295 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title>找回密码</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="css/getback.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
 	</head>
+
 	<body>
+		<div class="g-doc">
+			<div class="g-hd">
+				<div class="g-hdc">
+					<div class="m-head">
+						<div class="logo">
+							<a href="index.html" class="link"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="g-bd">
+				<div class="g-bdc">
+					<div id="getback">
+						<div class="wrap-content">
+							<div class="content-title">
+								找回密码
+							</div>
+							<div class="content-main">
+								<div class="con-wrap">
+									<form class="getback-form" name="backform">
+										<span id="loginname"></span>
+										<div id="userconfirm">
+											<div class="reg-item">
+												<div class="input-label">
+													<label>邮箱:</label>
+													<i class="require"></i>
+												</div>
+												<input id="backemail" type="text" name="email" class="outline-input text-email" placeholder="请输入注册邮箱地址" autocomplete="off">
+
+												<li class="tip-info email-info"></li>
+											</div>
+
+											<div class="reg-item">
+												<div class="input-label">
+													<label>图片验证码:</label>
+													<i class="require"></i>
+												</div>
+												<input id="textpkey" type="text" name="pkey" class="outline-input text-pkey" placeholder="图片验证码" autocomplete="off">
+												<img class="photokey" title="更换图片" src="http://localhost:8080/Xiot/user/getCode" />
+												<li class="tip-info pkey-info"></li>
+											</div>
+
+											<div class="reg-item">
+												<div class="input-label">
+													<label>邮箱验证码:</label>
+													<i class="require"></i>
+												</div>
+												<input type="text" name="mkey" class="outline-input text-mkey" placeholder="邮箱验证码" autocomplete="off">
+												<button id="mkeybtn" type="button" class="reg-btn mkey-btn" disabled="disabled">获取验证码</button>
+												<li class="tip-info mkey-info"></li>
+											</div>
+
+											<div class="reg-item">
+												<input id="getback-btn" type="button" class="reg-btn check-account" value="通过邮箱找回">
+											</div>
+										</div>
+										
+										<div id="updatepw" class="hidden">
+											<div class="reg-item">
+												<div class="input-label">
+													<label>密码:</label>
+													<i class="require"></i>
+												</div>
+												<input type="password" name="passwd" class="outline-input text-passwd" placeholder="密码" autocomplete="off">
+	
+												<li class="tip-info passwd-info"></li>
+	
+											</div>
+
+											<div class="reg-item">
+													<div class="input-label">
+														<label>确认密码:</label>
+														<i class="require"></i>
+													</div>
+													<input type="password" name="passwd2" class="outline-input text-passwd2" placeholder="确认密码" autocomplete="off">
+	
+													<li class="tip-info passwd2-info"></li>
+											</div>
+											
+											<div class="reg-item">
+												<input id="updatepw-btn" type="button" class="reg-btn check-account" value="确定修改">
+											</div>
+										</div>
+									</form>
+									
+									
+									
+													
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			// 个人注册：邮箱输入验证正确时，恢复发送验证码的button
+			document.getElementById("backemail").oninput = function() {
+			myFunction()
+			};
+
+			function myFunction() {
+				var a = document.getElementById("backemail").value
+				// console.log(a);
+				if(a.match(/^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/)) {
+					$(".mkey-btn").removeAttr("disabled");
+				} else {
+					$(".mkey-btn").attr("disabled", true);
+				}
+			}
+			
+			$(document).ready(function(){
+				// 输入框绑定enter键
+				$(":input").bind('keypress', function(event) {
+					if(event.keyCode == "13") {
+						$(".check-account").click();
+					}
+				});
+	
+				// 刷新图片验证码
+				$(".photokey").click(function() {
+					$.ajax({
+						type: "get",
+						url: "user/getCode",
+						async: true,
+						success: function(data) {
+							var timestamp = new Date().getTime();
+							$(".photokey").attr("src", "http://localhost:8080/Xiot/user/getCode" + '?' + timestamp);
+						}
+					});
+				})
+				
+				// 发送邮箱验证码，同时验证图片验证码，成功则发送
+				$("#mkeybtn").click(function() {
+					var mailkey = {
+						loginName: $(".text-email").val().trim(),
+						imageCode: $("#textpkey").val().trim(),
+						type: "email"
+					}
+					$.ajax({
+						type: "post",
+						url: "user/forgetPWD/step1",
+						async: true,
+						data: mailkey,
+						dataType: 'json',
+						success: function(data) {
+							if(data.status == "FAIL") {
+								$.ajax({
+									type: "get",
+									url: "user/getCode",
+									async: true,
+									success: function(data) {
+										var timestamp = new Date().getTime();
+										$(".photokey").attr("src", "http://localhost:8080/Xiot/user/getCode" + '?' + timestamp);
+									}
+								});
+								if(data.code == 503) {
+									$(".email-info").html("用户不存在！");
+									$("#backuser").focus();
+									return false;
+								}
+								if(data.code == 515) {
+									$(".pkey-info").html("图片验证码错误！");
+									$("#textpkey").focus();
+									return false;
+								}
+							}
+							$(".email-info").html("");
+							$(".pkey-info").html("");
+							$(".mkey-info").html("验证码已发送至邮箱，请查收！");
+						}
+					});
+				})
+				// 输入框验证以及后台交互
+				$("#getback-btn").click(function(){
+					var fr = document.backform;
+					var email_value = fr.email.value.trim();
+					var mkey_value = fr.mkey.value.trim();
+					var pkey_value = fr.pkey.value.trim();
+					
+					if(email_value == "") {
+						$(".email-info").html("邮箱不能为空！");
+						fr.email.focus();
+						return false;
+					} else if(!(email_value.match(/^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/))) {
+						$(".email-info").html("请输入正确的邮箱格式！");
+						fr.email.focus();
+						return false;
+					} else {
+						$(".email-info").html("");
+					}
+					
+					if(pkey_value == "") {
+						$(".pkey-info").html("验证码不能为空！");
+						fr.pkey.focus();
+						return false;
+					} else {
+						$(".pkey-info").html("");
+					}
+
+					if(mkey_value == "") {
+						$(".mkey-info").html("验证码不能为空！");
+						fr.mkey.focus();
+						return false;
+					} else {
+						$(".mkey-info").html("");
+					}
+					
+					var getback = {
+						loginName: email_value,
+						authCode: mkey_value
+					}
+					
+					$.ajax({
+						async: false,
+						type: "POST",
+						url: "user/forgetPWD/step2",
+						data: getback,
+						dataType: 'json',
+						success: function(data) {
+							if (data.status == "FAIL") {
+								if(data.code == 505) {
+									$(".mkey-info").html("验证码错误，请重新输入！");
+									fr.mkey.focus();
+									return false;
+								}	
+							}
+								
+								
+								$(".content-title").text("修改密码");
+								$("#userconfirm").addClass("hidden");
+								$("#updatepw").removeClass("hidden");
+								$("#loginname").addClass(email_value);
+						}											
+					});
+				})
+				
+				//  修改密码
+				$("#updatepw-btn").click(function(){
+					var loginName = $("#loginname").attr('class');
+					console.log(loginName);
+					var fr = document.backform;
+					var pwd_value = fr.passwd.value.trim();
+					if(pwd_value == "") {
+						$(".passwd-info").html("密码不能为空！");
+						fr.passwd.focus();
+						return false;
+					} else {
+						$(".passwd-info").html("");
+					}
+
+					if(fr.passwd.value != fr.passwd2.value) {
+						$(".passwd2-info").html("两次输入的密码不一致！");
+						fr.passwd2.focus();
+						return false;
+					} else {
+						$(".passwd2-info").html("");
+					}
+					
+					var updatepsw = { 
+						password: pwd_value,
+						loginName: loginName
+					}
+					
+					$.ajax({
+						async: false,
+						type: "POST",
+						url: "user/forgetPWD/step3",
+						data: updatepsw,
+						dataType: 'json',
+						success: function(data) {
+							$(".passwd2-info").html("修改成功！")
+							setTimeout("window.location.href='login.html'",3000);
+						}
+					});
+				})
+			})
+		</script>
 	</body>
+
 </html>

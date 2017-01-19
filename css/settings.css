@@ -97,7 +97,7 @@ a,
 .nav li a{
 	height: 35px;
 }
-#register{
+#settings{
 	position: relative;
     width: 980px;
     margin: auto;
@@ -106,7 +106,7 @@ a,
     zoom: 1;
 }
 .wrap-content {
-    margin: 23px auto 0;
+    margin: 135px auto 0;
     width: 700px;
 }
 .content-title {
@@ -132,10 +132,10 @@ a,
     padding-left: 5px;
     width: 370px;
 }
-.register-form {
+.settings-form {
 	margin-left: 170px;
 }
-.register-form .reg-item {
+.settings-form .reg-item {
     display: inline-block;
     width: 100%;
 }
@@ -159,12 +159,11 @@ li {
 }
 
 .input-label {
-    text-align: right;
-    float: left;
-    width: 110px;
+	float: left;
+    width: 100px;
     height: 46px;
     line-height: 46px;
-    margin-right: 20px;
+    margin-bottom: 0;
     padding-top: 5px;
 }
 .outline-input {
@@ -192,7 +191,7 @@ li {
     margin: 7px 0;
     padding-left: 100px;
 }
-.register-form .reg-item {
+.settings-form .reg-item {
     display: inline-block;
 }
 
@@ -219,13 +218,6 @@ li {
     background-position: -29px -70px;
 }
 
-.location-sel {
-	display: inline-block;
-    height: 42px;
-    width: 92px;
-    padding: 10px 0px 10px 0px;
-    margin: 2px 0;
-}
 .text-pkey,.text-mkey {
 	width: 190px;
 	float: left;
@@ -252,26 +244,9 @@ li {
     color: #b9b9b9;
     cursor: not-allowed;
 }
-.setn-title {
-	font-size: 25px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    padding-left: 90px;
+.text-user:disabled{
+		border: none;
+	background-color: #FFFFFF;
+	color: #337ab7;
 }
-.account-icon {
-	background-image: url(../images/account-icon.png);
-    width: 34px;
-    height: 30px;
-    display: block;
-    float: left;
-    margin-right: 5px;
-}
-.text-industry {
-	display: inline-block;
-    height: 42px;
-    padding: 10px 0px 10px 0px;
-    margin: 2px 0;
-}
-.check-account{
-	margin-left: 20px;
-}
+

@@ -1,33 +1,6 @@
-// 个人注册：邮箱输入验证正确时，恢复发送验证码的button
-document.getElementById("email").oninput = function() {
-	myFunction()
-};
 
-function myFunction() {
-	var a = document.getElementById("email").value
-		// console.log(a);
-	if(a.match(/^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/)) {
-		$(".mkey-btn").removeAttr("disabled");
-	} else {
-		$(".mkey-btn").attr("disabled", true);
-	}
-}
-
-// 企业注册：邮箱输入验证正确时，恢复发送验证码的button
-document.getElementById("contactemail").oninput = function() {
-	myFunction()
-};
-
-function myFunction() {
-	var a = document.getElementById("contactemail").value;
-	if(a.match(/^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/)) {
-		$(".mkey-btn").removeAttr("disabled");
-	} else {
-		$(".mkey-btn").attr("disabled", true);
-	}
-}
 $(document).ready(function() {
-	
+
 	// 以下是个人注册
 	// 刷新图片验证码
 	$(".photokey").click(function() {
@@ -92,8 +65,8 @@ $(document).ready(function() {
 		var email_value = fr.email.value.trim();
 		var pkey_value = fr.pkey.value.trim();
 		var mkey_value = fr.mkey.value.trim();
-		var address = $("#s_city option:selected").val() + $("#s_province option:selected").val() + $("#s_county option:selected").val()
-
+		var address = $("#s_province option:selected").val() + $("#s_city option:selected").val() + $("#s_county option:selected").val()
+		console.log(address)
 		if(user_value == "") {
 			$(".user-info").html("请输入用户名！");
 			fr.user.focus();
@@ -152,7 +125,7 @@ $(document).ready(function() {
 
 		var register = {
 			userName: user_value,
-			password: pwd_value1,
+			password: pwd_value,
 			email: email_value,
 			authCode: mkey_value,
 			address: address

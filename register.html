@@ -45,88 +45,90 @@
 									<div class="content-main">
 										<div class="con-wrap">
 											<form class="register-form" name="regform">
-												
+
 													<div class="reg-item">
 														<div class="input-label">
 															<label>用户名:</label>
 															<i class="require"></i>
-														</div>																																				
-														<input type="text" name="user" class="outline-input text-user" placeholder="用户名">																										
-																									
+														</div>
+														<input autocomplete="off" type="text" name="user" class="outline-input text-user" placeholder="用户名">
+
 														<li class="tip-info user-info"></li>
 													</div>
-													
-													
+
+
 													<div class="reg-item">
 															<div class="input-label">
 																<label>密码:</label>
 																<i class="require"></i>
-															</div>	
-															<input type="password" name="passwd" class="outline-input text-passwd" placeholder="密码">
-																												
-														<li class="tip-info passwd-info"></li>	
-														
+															</div>
+															<input autocomplete="off" type="password" name="passwd" class="outline-input text-passwd" placeholder="密码">
+
+														<li class="tip-info passwd-info"></li>
+
 													</div>
-													
+
 													<div class="reg-item">
 															<div class="input-label">
 																<label>确认密码:</label>
 																<i class="require"></i>
-															</div>	
-															<input type="password" name="passwd2" class="outline-input text-passwd2" placeholder="确认密码">
-														
+															</div>
+															<input autocomplete="off" type="password" name="passwd2" class="outline-input text-passwd2" placeholder="确认密码">
+
 															<li class="tip-info passwd2-info"></li>
 													</div>
-													
+
 													<div class="reg-item">
 															<div class="input-label">
 																<label>所在地:</label>
 																<i class="require" style="display: none;"></i>
-															</div>	
+															</div>
 																<select class="location-sel s_province" id="s_province" name="s_province"></select>  
 															    <select class="location-sel s_city" id="s_city" name="s_city" ></select>  
 															    <select class="location-sel s_county" id="s_county" name="s_county"></select>
 															    <script class="resources library" src="js/area.js" type="text/javascript"></script>
-															
-															    <script type="text/javascript">_init_area();</script>						
-															
+
+															    <script type="text/javascript">
+															    	_init_area();
+															    </script>
+
 															<li class="tip-info location-info"></li>
 													</div>
-													
+
 													<div class="reg-item">
 															<div class="input-label">
 																<label>邮箱:</label>
 																<i class="require"></i>
-															</div>															
-															<input id="email" type="text" name="email" class="outline-input text-email" placeholder="邮箱">
-														
+															</div>
+															<input  autocomplete="off" id="email" type="text" name="email" class="outline-input text-email" placeholder="邮箱">
+
 															<li class="tip-info email-info"></li>
 													</div>
-													
+
 													<div class="reg-item">
 															<div class="input-label">
 																<label>图片验证码:</label>
 																<i class="require"></i>
 															</div>
-															<input id="textpkey" type="text" name="pkey" class="outline-input text-pkey" placeholder="图片验证码">
+															<input autocomplete="off" id="textpkey" type="text" name="pkey" class="outline-input text-pkey" placeholder="图片验证码">
 															<img class="photokey" title="更换图片" src="http://localhost:8080/Xiot/user/getCode"/>
 															<li class="tip-info pkey-info"></li>
 													</div>
-													
+
 													<div class="reg-item">
 															<div class="input-label">
 																<label>邮箱验证码:</label>
 																<i class="require"></i>
 															</div>
-															<input type="text" name="mkey" class="outline-input text-mkey" placeholder="邮箱验证码">
+															<input autocomplete="off" type="text" name="mkey" class="outline-input text-mkey" placeholder="邮箱验证码">
 															<button id="mkeybtn" type="button" class="reg-btn mkey-btn" disabled="disabled">获取验证码</button>
 															<li class="tip-info mkey-info"></li>
-													</div>													
-				
+													</div>
+
 													<div class="reg-item">
 														<input id="register-btn" type="button" class="reg-btn check-account" value="注册">
 													</div>
-												
+
 											</form>
 										</div>
 									</div>
@@ -152,82 +154,82 @@
 														<div class="input-label">
 															<label>用户名:</label>
 															<i class="require"></i>
-														</div>																																				
-														<input type="text" name="couser" class="outline-input text-co-user" placeholder="用户名">																										
-																									
+														</div>
+														<input autocomplete="off" type="text" name="couser" class="outline-input text-co-user" placeholder="用户名">
+
 														<li class="tip-info co-user-info"></li>
 													</div>
-													
+
 													<div class="reg-item">
 															<div class="input-label">
 																<label>密码:</label>
 																<i class="require"></i>
-															</div>	
-															<input type="password" name="copasswd" class="outline-input co-text-passwd" placeholder="密码">
-																												
-														<li class="tip-info co-passwd-info"></li>	
+															</div>
+															<input autocomplete="off" type="password" name="copasswd" class="outline-input co-text-passwd" placeholder="密码">
+
+														<li class="tip-info co-passwd-info"></li>
 													</div>
-													
+
 													<div class="reg-item">
 															<div class="input-label">
 																<label>确认密码:</label>
 																<i class="require"></i>
-															</div>	
-															<input type="password" name="copasswd2" class="outline-input co-text-passwd2" placeholder="确认密码">
-														
+															</div>
+															<input autocomplete="off" type="password" name="copasswd2" class="outline-input co-text-passwd2" placeholder="确认密码">
+
 															<li class="tip-info co-passwd2-info"></li>
 													</div>
-													
+
 												</section>
-													
+
 												<section class="company-info">
 													<div class="setn-title">
 														<span class="account-icon" style="background-image: url(images/company-icon.png);"></span>
 														<span>企业信息</span>
 													</div>
-													
+
 													<div class="reg-item">
 														<div class="input-label">
 															<label>企业名称:</label>
 															<i class="require"></i>
-														</div>																																				
-														<input type="text" name="coname" class="outline-input text-coname" placeholder="企业名称">																										
-																									
+														</div>
+														<input autocomplete="off" type="text" name="coname" class="outline-input text-coname" placeholder="企业名称">
+
 														<li class="tip-info co-name-info"></li>
 													</div>
-													
+
 													<div class="reg-item">
 															<div class="input-label">
 																<label>企业所在地:</label>
 																<i class="require"></i>
-															</div>	
+															</div>
 																<select class="location-sel s_province" id="s1_province" name="s1_province"></select>  
 															    <select class="location-sel s_city" id="s1_city" name="s1_city" ></select>  
 															    <select class="location-sel s_county" id="s1_county" name="s1_county"></select>
 															    <script class="resources library" src="js/area1.js" type="text/javascript"></script>
-															
-															    <script type="text/javascript">_init_area();</script>		
 
-															
+															    <script type="text/javascript">_init_area1();</script>
+
+
 															<li class="tip-info co-location-info"></li>
 													</div>
-													
+
 													<div class="reg-item">
 														<div class="input-label">
 															<label>详细地址:</label>
 															<i class="require" style="display: none;"></i>
-														</div>																																				
-														<input type="text" name="fulladdress" class="outline-input text-fulladdress" placeholder="不需要重复填写省市区，不少于5个字">																										
-																									
+														</div>
+														<input autocomplete="off" type="text" name="fulladdress" class="outline-input text-fulladdress" placeholder="不需要重复填写省市区，不少于5个字">
+
 														<li class="tip-info fulladdress-info"></li>
 													</div>
-													
+
 													<div class="reg-item">
 														<div class="input-label">
 															<label>所属行业:</label>
 															<i class="require" style="display: none;"></i>
 														</div>
-														
+
 														 <select name="industry" id="industry" class="text-industry">
                             								<option value="">选择行业</option>
                                                             <option value="1">计算机硬件及网络设备</option>
@@ -277,85 +279,85 @@
                                                             <option value="45">农/林/牧/渔</option>
                                                             <option value="46">跨领域经营</option>
                                                             <option value="47">其它</option>
-                                                   </select>																													
-																									
+                                                   </select>
+
 														<li class="tip-info industry-info"></li>
 													</div>
-													
-												</section>	
-												
+
+												</section>
+
 												<section class="contact-info">
 													<div class="setn-title">
 														<span class="account-icon" style="background-image: url(images/contact-icon.png);"></span>
 														<span>联系人信息</span>
 													</div>
-													
+
 													<div class="reg-item">
 														<div class="input-label">
 															<label>企业联系人:</label>
 															<i class="require" style="display: none;"></i>
-														</div>																																				
-														<input type="text" name="contact" class="outline-input text-contact" placeholder="企业联系人">																										
-																									
+														</div>
+														<input autocomplete="off" type="text" name="contact" class="outline-input text-contact" placeholder="企业联系人">
+
 														<li class="tip-info contact-info"></li>
 													</div>
-													
+
 													<div class="reg-item">
 														<div class="input-label">
 															<label>所属部门:</label>
 															<i class="require" style="display: none;"></i>
-														</div>																																				
-														<input type="text" name="department" class="outline-input text-department" placeholder="所属部门">																										
-																									
+														</div>
+														<input autocomplete="off" type="text" name="department" class="outline-input text-department" placeholder="所属部门">
+
 														<li class="tip-info department-info"></li>
 													</div>
-													
+
 													<div class="reg-item">
 														<div class="input-label">
 															<label>联系电话:</label>
 															<i class="require" style="display: none;"></i>
-														</div>																																				
-														<input type="text" name="contacttel" class="outline-input text-contacttel" placeholder="联系电话">																										
-																									
+														</div>
+														<input autocomplete="off" type="text" name="contacttel" class="outline-input text-contacttel" placeholder="联系电话">
+
 														<li class="tip-info contacttel-info"></li>
 													</div>
-													
+
 													<div class="reg-item">
 															<div class="input-label">
 																<label>联系邮箱:</label>
 																<i class="require"></i>
-															</div>															
-															<input id="contactemail"  type="text" name="contactemail" class="outline-input text-contactemail" placeholder="邮箱">
-														
+															</div>
+															<input autocomplete="off" id="contactemail"  type="text" name="contactemail" class="outline-input text-contactemail" placeholder="邮箱">
+
 															<li class="tip-info contactemail-info"></li>
 													</div>
-													
+
 													<div class="reg-item">
 															<div class="input-label">
 																<label>图片验证码:</label>
 																<i class="require"></i>
 															</div>
-															<input id="cotextpkey" type="text" name="copkey" class="outline-input text-pkey" placeholder="图片验证码">
+															<input autocomplete="off" id="cotextpkey" type="text" name="copkey" class="outline-input text-pkey" placeholder="图片验证码">
 															<img class="photokey" title="更换图片" src="http://localhost:8080/Xiot/user/getCode"/>
 															<li class="tip-info co-pkey-info"></li>
 													</div>
-													
+
 													<div class="reg-item">
 															<div class="input-label">
 																<label>邮箱验证码:</label>
 																<i class="require"></i>
 															</div>
-															<input type="text" name="comkey" class="outline-input text-mkey" placeholder="邮箱验证码">
+															<input autocomplete="off" type="text" name="comkey" class="outline-input text-mkey" placeholder="邮箱验证码">
 															<button id="comkeybtn" type="button" class="reg-btn mkey-btn" disabled="disabled">获取验证码</button>
 															<li class="tip-info co-mkey-info"></li>
-													</div>		
+													</div>
 												</section>
-																								
-				
+
+
 													<div class="reg-item">
 														<input id="co-register-btn" type="button" class="reg-btn check-account" value="注册">
 													</div>
-												
+
 											</form>
 										</div>
 									</div>
@@ -368,5 +370,39 @@
 			</div>
 		</div>
 	<script src="js/register.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		// 个人注册：邮箱输入验证正确时，恢复发送验证码的button
+			document.getElementById("email").oninput = function() {
+	myFunction()
+};
+
+				function myFunction() {
+				var a = document.getElementById("email").value
+				console.log(a);
+				if(a.match(/^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/)) {
+					$(".mkey-btn").removeAttr("disabled");
+				} else {
+					$(".mkey-btn").attr("disabled", true);
+				}
+			}
+
+		// 企业注册：邮箱输入验证正确时，恢复发送验证码的button
+			document.getElementById("contactemail").oninput = function() {
+				myFunction2()
+			};
+
+			function myFunction2() {
+				var b = document.getElementById("contactemail").value;
+				if(b.match(/^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/)) {
+					$(".mkey-btn").removeAttr("disabled");
+				} else {
+					$(".mkey-btn").attr("disabled", true);
+				}
+			}
+		})
+	
+	
+	</script>
 	</body>
 </html>

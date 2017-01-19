@@ -53,8 +53,8 @@ html,body,.g-doc {
 	position: relative;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	min-width: 980px;
-	max-width: 1400px;
+	min-width: 600px;
+	max-width: 900px;
 	margin: 0 auto;
 	border: 1px solid #e0e0e0;
 	min-height: 850px;
@@ -97,9 +97,9 @@ a,
 .nav li a{
 	height: 35px;
 }
-#register{
+#perinfo{
 	position: relative;
-    width: 980px;
+    width: 908px;
     margin: auto;
     min-width: 760px;
     text-align: left;
@@ -132,10 +132,10 @@ a,
     padding-left: 5px;
     width: 370px;
 }
-.register-form {
+.perinfo-form {
 	margin-left: 170px;
 }
-.register-form .reg-item {
+.perinfo-form .reg-item {
     display: inline-block;
     width: 100%;
 }
@@ -168,7 +168,7 @@ li {
     padding-top: 5px;
 }
 .outline-input {
-	display: block;
+	display: inline-block;
     border: 1px solid #d8e1f0;
     border-radius: 2px;
     height: 46px;
@@ -192,11 +192,12 @@ li {
     margin: 7px 0;
     padding-left: 100px;
 }
-.register-form .reg-item {
+.perinfo-form .reg-item {
     display: inline-block;
 }
 
 .reg-btn {
+    margin-left: 122px;
     background: #22ac69;
     border-radius: 4px;
     color: #fff;
@@ -207,7 +208,7 @@ li {
     height: 40px;
     line-height: 40px;
     text-align: center;
-    width: 400px;
+    width: 309px;
     box-sizing: content-box;
 }
 .require {
@@ -260,18 +261,108 @@ li {
 }
 .account-icon {
 	background-image: url(../images/account-icon.png);
-    width: 34px;
-    height: 30px;
-    display: block;
-    float: left;
-    margin-right: 5px;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    cursor: pointer;
 }
-.text-industry {
+.text-summary{
+	height: 140px;
+}
+.text-user:disabled,.text-email:disabled,.text-realname:disabled,
+.text-gender:disabled,.text-location:disabled,.text-birth:disabled,
+.text-unit:disabled,.text-mobile:disabled,.text-qqnum:disabled,.text-summary:disabled{
+	border: none;
+	background-color: #FFFFFF;
+	color: #337ab7;
+}
+.text-summary:disabled{
+	border: none;
+	background-color: #FFFFFF;
+	color: #337ab7;
+	padding-top: 15px;
+}
+.birth-sel{
 	display: inline-block;
     height: 42px;
-    padding: 10px 0px 10px 0px;
+    width: 75px;
+    padding: 10px;
     margin: 2px 0;
 }
-.check-account{
-	margin-left: 20px;
+/*input:disabled::-webkit-input-placeholder{
+    color:transparent;
+}*/
+.roundedOne {
+  float: left;
+  width: 22px;
+  height: 22px;
+  position: relative;
+  margin: 13px 10px 0 0;
+  background: #fcfff4;
+  background: -moz-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+  background: -webkit-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+  background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  -moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+.roundedOne label {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  background: -moz-linear-gradient(top, #222222 0%, #45484d 100%);
+  background: -webkit-linear-gradient(top, #222222 0%, #45484d 100%);
+  background: linear-gradient(to bottom, #999 0%, #f5f5f5 100%);
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  -moz-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px white;
+  -webkit-box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px white;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px white;
+}
+.roundedOne label:after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  background: #00bf00;
+  background: -moz-linear-gradient(top, #00bf00 0%, #009400 100%);
+  background: -webkit-linear-gradient(top, #00bf00 0%, #009400 100%);
+  background: linear-gradient(to bottom, #00bf00 0%, #009400 100%);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  -moz-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+.roundedOne label:hover::after {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+}
+.roundedOne input[type=radio] {
+  visibility: hidden;
+}
+.roundedOne input[type=radio]:checked + label:after {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+}
+.sex-option{
+	display: inline-block;
+    float: left;
+    margin-top: 15px;
+    margin-right: 60px;
+}
+.edit-info{
+	height: 46px;
 }

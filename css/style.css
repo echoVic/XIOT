@@ -21,6 +21,11 @@ ul{
 margin:0;
 padding:0;
 }
+#devcenter{
+    margin-top: 20px;
+    width: 116px;
+    float: right;
+}
 /*--header--*/
 .logo {
   float: left;
@@ -124,6 +129,9 @@ ul.nav.navbar-nav li a.active {
 .lrbutton{
 	margin-top: 20px;
 	float: right;
+}
+#index,#case,#discover,#doc,#username,#infoedit,#setting,#logout{
+	cursor: pointer;
 }
 /*--slider end here--*/
 .banner {
@@ -2547,3 +2555,4 @@ border: none;
 	  font-size: 2em;
 	}
 }
+

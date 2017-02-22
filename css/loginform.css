@@ -5,63 +5,80 @@
     margin: 100px auto;
 }
 
-.curs-login .curs-lg-bd, .curs-login .uc-tlt, .curs-login .curs-m-bd, .curs-login .curs-m-form, .curs-login .curs-m-ipt {
-    font-family: "Microsoft YaHei","微软雅黑","宋体",helvetica,"Hiragino Sans GB";
+.curs-login .curs-lg-bd,
+.curs-login .uc-tlt,
+.curs-login .curs-m-bd,
+.curs-login .curs-m-form,
+.curs-login .curs-m-ipt {
+    font-family: "Microsoft YaHei", "微软雅黑", "宋体", helvetica, "Hiragino Sans GB";
     margin: 0;
     outline: medium none;
     padding: 0;
 }
+
 .curs-login img {
     border: 0 none;
 }
+
 .curs-login label {
     cursor: default;
 }
+
 .curs-login * {
     box-sizing: content-box !important;
 }
+
 .curs-login input {
     background-color: #fcfdff;
     border: medium none;
     color: #333;
-    font: 14px/18px "Microsoft YaHei","微软雅黑","宋体",helvetica,"Hiragino Sans GB";
+    font: 14px/18px "Microsoft YaHei", "微软雅黑", "宋体", helvetica, "Hiragino Sans GB";
     height: 18px;
     margin-left: 11px;
     outline: 0 none;
     width: 290px;
 }
+
 .curs-login input:-moz-placeholder {
     color: #cccccc;
     font-size: 14px;
     font-weight: normal;
 }
+
 .curs-login input::-moz-placeholder {
     color: #cccccc;
     font-size: 14px;
     font-weight: normal;
 }
+
 .curs-login .curs-input:focus {
     border: medium none;
     outline: medium none;
 }
+
 .curs-login .curs-input-lb {
     margin-left: 47px;
     width: 270px;
 }
-.curs-login a, .curs-login a:active, .curs-login a:hover, .curs-login a:visited {
+
+.curs-login a,
+.curs-login a:active,
+.curs-login a:hover,
+.curs-login a:visited {
     color: #538edb;
-    font: 13px "Microsoft YaHei","微软雅黑","宋体",helvetica,"Hiragino Sans GB";
+    font: 13px "Microsoft YaHei", "微软雅黑", "宋体", helvetica, "Hiragino Sans GB";
     outline: medium none;
     text-decoration: none;
 }
+
 .curs-login .clearboth {
     clear: both;
 }
-.curs-login .f-cb {
-}
+
 .curs-login .f-fr {
     float: right;
 }
+
 .curs-login .f-cb::after {
     clear: both;
     content: ".";
@@ -70,17 +87,23 @@
     overflow: hidden;
     visibility: hidden;
 }
-.curs-login .curs-u-logo-img1, .curs-u-logo-img2, .curs-u-close {
+
+.curs-login .curs-u-logo-img1,
+.curs-u-logo-img2,
+.curs-u-close {
     background: rgba(0, 0, 0, 0) url("https://ursdoccdn.nosdn.127.net/yun/sprite_yun_20160907.png") no-repeat scroll -9999px -9999px;
     height: 21px;
     width: 21px;
 }
+
 .curs-login .f-dn {
     display: none !important;
 }
+
 .curs-login .f-ib {
     display: inline-block !important;
 }
+
 .curs-login .curs-lg-cover {
     background: #000 none repeat scroll 0 0;
     height: 100%;
@@ -92,6 +115,7 @@
     width: 100%;
     z-index: 1000;
 }
+
 .curs-login .curs-lg-bd {
     background-color: #fcfdff;
     border-radius: 2px;
@@ -104,18 +128,21 @@
     width: 434px;
     z-index: 10000;
 }
+
 .curs-login .curs-lg-inbd {
     background-color: #fcfdff;
     min-height: 331px;
     position: relative;
     width: 434px;
 }
+
 .curs-login .curs-m-toast {
     position: absolute;
     text-align: center;
     top: -20px;
     width: 100%;
 }
+
 .curs-login .curs-m-toast .curs-txt {
     background: #4c5359 none repeat scroll 0 0;
     color: #fff;
@@ -128,16 +155,19 @@
     text-align: center;
     width: 315px;
 }
+
 .curs-login .curs-m-tlt {
     padding-top: 25px;
     position: relative;
 }
+
 .curs-login .curs-m-tlt .uc-tlt {
     color: #333;
     font-size: 20px;
     font-weight: normal;
     text-align: center;
 }
+
 .curs-login .curs-m-tlt .curs-u-close {
     background-position: -26px -41px;
     cursor: pointer;
@@ -148,20 +178,25 @@
     transition: transform 0.5s ease 0s;
     width: 13px;
 }
+
 .curs-login .curs-m-tlt .curs-u-close:hover {
     transform: rotate(180deg);
 }
+
 .curs-login .curs-m-bd {
     padding-top: 16px;
 }
+
 .curs-login .curs-m-form .curs-b-btn {
     height: 48px;
     margin: 0 auto;
     width: 350px;
 }
+
 .curs-login .curs-m-form .curs-m-ipt {
     margin-top: 19px;
 }
+
 .curs-login .curs-m-form .curs-m-ipt::after {
     clear: both;
     content: ".";
@@ -170,17 +205,21 @@
     overflow: hidden;
     visibility: hidden;
 }
+
 .curs-login .curs-m-form .curs-m-ipt .curs-u-logo {
     left: 15px;
     position: absolute;
     top: 14px;
 }
+
 .curs-login .curs-m-form .curs-m-ipt .curs-u-logo .curs-u-logo-img1 {
     background-position: 0 -3px;
 }
+
 .curs-login .curs-m-form .curs-m-ipt .curs-u-logo .curs-u-logo-img2 {
     background-position: -23px -3px;
 }
+
 .curs-login .curs-m-form .curs-m-ipt .curs-u-ipt {
     border: 1px solid #d8e1f0;
     height: 18px;
@@ -190,24 +229,29 @@
     position: relative;
     width: 350px;
 }
+
 .curs-login .curs-m-form .curs-m-ipt .curs-u-ipt .placeholder {
     color: #999;
     font-size: 14px;
     left: 46px;
     position: absolute;
 }
+
 .curs-login .curs-m-form .curs-m-ipt .curs-u-ipt .placeholder1 {
     color: #999;
     font-size: 14px;
     left: 12px;
     position: absolute;
 }
+
 .curs-login .curs-m-form .curs-m-ipt .curs-u-ipt-error {
     border: 1px solid #ff5c57;
 }
+
 .curs-login .curs-m-form .curs-m-ipt .curs-u-ipt-active {
     border: 1px solid #58a2f7;
 }
+
 .curs-login .curs-m-form .curs-m-ipt .curs-u-tip {
     background: #fff none repeat scroll 0 0;
     position: absolute;
@@ -215,6 +259,7 @@
     top: 14px;
     z-index: 11;
 }
+
 .curs-login .curs-m-form .curs-m-ipt .curs-u-tip .curs-u-clear {
     background: rgba(0, 0, 0, 0) url("https://ursdoccdn.nosdn.127.net/yun/sprite_yun_20160907.png") no-repeat scroll 0 -27px;
     cursor: pointer;
@@ -225,19 +270,24 @@
     top: 0;
     width: 20px;
 }
+
 .curs-login .curs-m-form .curs-m-ipt .curs-u-tip .curs-u-clear:hover {
     opacity: 1;
 }
+
 .curs-login .curs-m-form .curs-m-ipt .curs-u-ipt-small {
     position: relative;
 }
+
 .curs-login .curs-m-form .curs-m-ipt .curs-u-ipt-small input {
     margin-left: 11px;
     width: 192px;
 }
+
 .curs-login .curs-m-form .curs-m-ipt .curs-u-ipt-small .curs-u-tip {
     right: 110px;
 }
+
 .curs-login .curs-m-form .curs-m-ipt .xx-curs-i-vcode {
     cursor: pointer;
     height: 36px;
@@ -246,15 +296,18 @@
     top: 6px;
     width: 97px;
 }
+
 .curs-login .curs-m-form .xx-curs-m-ipt .xx-curs-i-vcode img {
     height: 36px;
     width: 97px;
 }
+
 .curs-login .curs-m-form .curs-m-pop {
     height: 16px;
     margin: 20px auto;
     width: 350px;
 }
+
 .curs-login .curs-m-form .curs-m-pop .curs-i {
     background: rgba(0, 0, 0, 0) url("https://ursdoccdn.nosdn.127.net/yun/sprite_yun_20160907.png") no-repeat scroll -25px -25px;
     display: none;
@@ -262,6 +315,7 @@
     height: 17px;
     width: 16px;
 }
+
 .curs-login .curs-m-form .curs-m-pop .curs-u-info {
     color: #ff5c57;
     display: none;
@@ -269,6 +323,7 @@
     font-size: 12px;
     padding-left: 4px;
 }
+
 .curs-login .curs-m-form .curs-m-pop .curs-u-guide {
     color: #999;
     display: block;
@@ -276,6 +331,7 @@
     font-size: 12px;
     padding-left: 4px;
 }
+
 .curs-login .curs-m-form .curs-m-pop .curs-u-guidel {
     color: #4079b3;
     cursor: pointer;
@@ -284,30 +340,37 @@
     font-size: 12px;
     padding-left: 4px;
 }
+
 .curs-login .curs-m-form .curs-m-btn {
     cursor: pointer;
 }
+
 .curs-login .curs-m-form .curs-m-btn .curs-b-btn {
     display: block;
     font-size: 18px;
     line-height: 50px;
     text-align: center;
 }
+
 .curs-login .curs-m-form .curs-m-btn .curs-btn-blue:hover {
     background-color: #4079b3;
 }
+
 .curs-login .curs-m-form .curs-m-btn .curs-btn-blue {
     background-color: #5494db;
     color: #fff;
 }
+
 .curs-login .curs-m-form .curs-m-btn .curs-btn-blue-dis {
     background-color: #b5d6f7;
     color: #fff;
 }
+
 .curs-login .curs-m-form .curs-m-btn .curs-btn-blue-dis:hover {
     background-color: #b5d6f7;
     color: #fff;
 }
+
 .curs-login .curs-m-link {
     height: auto;
     margin: 0 auto;
@@ -316,23 +379,28 @@
     text-align: center;
     width: 350px;
 }
+
 .curs-login .curs-m-link .curs-u-link {
     color: #999;
     font-size: 14px;
 }
+
 .curs-login .curs-m-link .curs-u-link {
     color: #538edb;
 }
+
 .curs-login .curs-m-link .curs-u-link .curs-lk-left {
     cursor: pointer;
     display: block;
     float: left;
 }
+
 .curs-login .curs-m-link .curs-u-link .curs-lk-right {
     cursor: pointer;
     display: block;
     float: right;
 }
+
 .curs-login .curs-m-link .curs-u-link::after {
     clear: both;
     content: ".";
@@ -341,12 +409,14 @@
     overflow: hidden;
     visibility: hidden;
 }
+
 .curs-login .curs-m-ft .curs-u-split {
     background-color: #f5f8fb;
     height: 1px;
     margin: 33px auto 0;
     width: 368px;
 }
+
 .curs-login .curs-m-form .xx-curs-m-check {
     color: #666;
     font-size: 12px;
@@ -355,6 +425,7 @@
     margin: 0 auto;
     width: 350px;
 }
+
 .curs-login .curs-m-form .xx-curs-m-check::after {
     clear: both;
     content: ".";
@@ -363,28 +434,37 @@
     overflow: hidden;
     visibility: hidden;
 }
-.curs-login .curs-m-form .xx-curs-checkbox-cover, .curs-login .curs-m-form .xx-curs-checkbox-cover-r {
+
+.curs-login .curs-m-form .xx-curs-checkbox-cover,
+.curs-login .curs-m-form .xx-curs-checkbox-cover-r {
     display: inline-block;
 }
+
 .curs-login .curs-m-form .xx-curs-checkbox-cover {
     float: left;
 }
+
 .curs-login .curs-m-form .xx-curs-checkbox-cover-r {
     float: right;
 }
+
 .curs-login .curs-m-form .xx-curs-m-check .xx-curs-u-agr {
     cursor: pointer;
     height: 13px;
     opacity: 0;
     width: 13px;
 }
+
 .curs-login .curs-m-form .xx-curs-m-check input {
     margin-left: 0;
 }
-.curs-login .curs-m-form .xx-curs-m-check .xx-curs-u-checkbox, .curs-login .curs-m-form .xx-curs-m-check .xx-curs-u-tip {
+
+.curs-login .curs-m-form .xx-curs-m-check .xx-curs-u-checkbox,
+.curs-login .curs-m-form .xx-curs-m-check .xx-curs-u-tip {
     display: block;
     float: left;
 }
+
 .curs-login .curs-m-form .xx-curs-m-check .xx-curs-u-checkbox {
     background: #fff url("https://ursdoccdn.nosdn.127.net/yun/sprite_yunreg_20160907.png") no-repeat scroll -9999px -9999px;
     border: 1px solid #bec4cc;
@@ -393,43 +473,53 @@
     margin-top: 2px;
     width: 13px;
 }
+
 .curs-login .curs-m-form .xx-curs-m-check .xx-curs-u-checkbox-selected {
     background-color: #4d92d6;
     background-position: -6px -84px;
     border: 1px solid #4d92d6;
     border-radius: 2px;
 }
+
 .curs-login .curs-m-form .xx-curs-m-check .xx-curs-u-tip {
     padding-left: 4px;
     padding-top: 3px;
 }
+
 .curs-login .curs-m-form .xx-curs-m-check .xx-curs-u-tip a {
     color: #538edb;
     font-size: 12px;
 }
+
 .curs-login .curs-info-m-bd {
     text-align: left;
 }
-.curs-login .curs-info-align, .curs-login .curs-info-bd {
+
+.curs-login .curs-info-align,
+.curs-login .curs-info-bd {
     display: inline-block;
     vertical-align: middle;
 }
+
 .curs-login .curs-info-align {
     height: 100%;
     line-height: 100%;
     width: 1px;
 }
+
 .curs-login .curs-info-bd {
     background-color: #fcfdff;
     border-radius: 2px;
     position: relative;
     width: 500px;
 }
+
 .curs-login .curs-info-inbd {
     background-color: #fcfdff;
     position: relative;
     width: 434px;
 }
+
 .curs-login .curs-m-form .xx-curs-btn-getsms {
     background-color: #7dbbfa;
     border-radius: 0;
@@ -445,16 +535,20 @@
     top: 6px;
     width: 97px;
 }
+
 .curs-login .curs-m-form .xx-curs-btn-getsms-dis {
     background-color: #d4d7d9;
     color: #fff;
 }
+
 .curs-login .curs-m-form .xx-curs-btn-getsms:hover {
     background-color: #70abe0;
 }
+
 .curs-login .curs-m-form .xx-curs-btn-getsms-dis:hover {
     background-color: #d4d7d9;
 }
+
 .curs-login .curs-m-form .curs-u-mobile {
     color: #555;
     display: block;

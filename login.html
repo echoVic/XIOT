@@ -1,239 +1,203 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title>登录--中科院物联网云平台XIot</title>
-		<link rel="stylesheet" type="text/css" href="css/loginstyle.css" />
-		<link rel="stylesheet" type="text/css" href="css/loginform.css" />		
-		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-	</head>
-	<!--[if lte IE 7]>
+<head>
+    <meta charset="UTF-8">
+    <title>登录--中科院物联网云平台XIot</title>
+    <link rel="stylesheet" type="text/css" href="css/loginstyle.css" />
+    <link rel="stylesheet" type="text/css" href="css/loginform.css" />
+    <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<!--[if lte IE 7]>
         <div class="alert-box alert header-alert">
             你正在使用本平台<strong>不支持</strong>的IE低级浏览器，<br />为了更好的使用中国移动物联网开放平台，请您立即<a class="blue" href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank">升级IE浏览器</a>或者用更快更安全的<a class="blue" href="https://www.google.com/chrome/browser/desktop/index.html?hl=zh-CN&standalone=1" target="_blank">谷歌浏览器Chrome</a> 。
         </div>
         <![endif]-->
 
-	<body>
-		<div class="g-doc">
-			<div class="g-hd">
-				<div class="g-hdc">
-					<div class="m-head">
-						<div class="logo">
-							<a href="index.html" class="link" target="_blank"></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="g-bd">
-				<div class="g-bdc">
-					<div id="app">
-						<div id="C-URS-LOGIN" class="curs-login">
-							<!--RegularC if0-->
-							<div class="curs-lg-inbd">
-
-								<div>
-
-									<!--RegularC list-->
-								</div>
-
-								<div class="curs-m-tlt">
-									<!--RegularC if1-->
-									<h3 class="uc-tlt">XIOT云平台</h3>
-								</div>
-
-								<div class="curs-m-bd">
-
-									<div>
-
-										<div class="curs-m-form">
-											<form id="urs-lg-form" action="" name="lgform">
-
-												<div class="curs-m-ipt">
-													<div class="curs-u-ipt curs-u-ipt- curs-u-ipt-none">
-														<!--RegularC if2-->
-														<div class="curs-u-label">
-															<div class="curs-u-logo">
-																<div class="curs-u-logo-img1"></div>
-															</div>
-														</div>
-
-														<input id="name" type="text" autocomplete="off" placeholder="用户名/手机/邮箱" class="curs-input curs-input-lb" name="account">
-
-														<!--RegularC if3-->
-
-														<!--RegularC if4-->
-														<div class="curs-u-tip" style="display: none;">
-															<div class="curs-u-clear"></div>
-														</div>
-														<!--RegularC if5-->
-
-													</div>
-
-												</div>
-												<!--RegularC if6-->
-
-												<div class="curs-m-ipt">
-													<div class="curs-u-ipt curs-u-ipt- curs-u-ipt-">
-														<!--RegularC if7-->
-														<div class="curs-u-label">
-															<div class="curs-u-logo">
-																<div class="curs-u-logo-img2"></div>
-															</div>
-														</div>
-
-														<input id="psw" autocomplete="off" placeholder="密码" class="curs-input curs-input-lb" type="password" name="password">
-
-														<!--RegularC if8-->
-
-														<!--RegularC if9-->
-														<div class="curs-u-tip" style="display: none;">
-															<div class="curs-u-clear"></div>
-														</div>
-														<!--RegularC if10-->
-
-													</div>
-
-												</div>
-												<!--RegularC if11-->
-
-												<!--RegularC if12-->
-
-												<div class="curs-m-pop">
-													<i class="curs-i"></i>
-													<span class="curs-u-info"></span>
-													<!--RegularC if13-->
-													<!--RegularC if14-->
-												</div>
-												<div class="xx-curs-m-check">
-
-													<!--RegularC if15-->
-													<p class="xx-curs-checkbox-cover">
-														<span class="xx-curs-u-checkbox xx-curs-u-checkbox-selected">
+<body>
+    <div class="g-doc">
+        <div class="g-hd">
+            <div class="g-hdc">
+                <div class="m-head">
+                    <div class="logo">
+                        <a href="index.html" class="link" target="_blank"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="g-bd">
+            <div class="g-bdc">
+                <div id="app">
+                    <div id="C-URS-LOGIN" class="curs-login">
+                        <!--RegularC if0-->
+                        <div class="curs-lg-inbd">
+                            <div>
+                                <!--RegularC list-->
+                            </div>
+                            <div class="curs-m-tlt">
+                                <!--RegularC if1-->
+                                <h3 class="uc-tlt">XIOT云平台</h3>
+                            </div>
+                            <div class="curs-m-bd">
+                                <div>
+                                    <div class="curs-m-form">
+                                        <form id="urs-lg-form" action="" name="lgform">
+                                            <div class="curs-m-ipt">
+                                                <div class="curs-u-ipt curs-u-ipt- curs-u-ipt-none">
+                                                    <!--RegularC if2-->
+                                                    <div class="curs-u-label">
+                                                        <div class="curs-u-logo">
+                                                            <div class="curs-u-logo-img1"></div>
+                                                        </div>
+                                                    </div>
+                                                    <input id="name" type="text" autocomplete="off" placeholder="用户名/手机/邮箱" class="curs-input curs-input-lb" name="account">
+                                                    <!--RegularC if3-->
+                                                    <!--RegularC if4-->
+                                                    <div class="curs-u-tip" style="display: none;">
+                                                        <div class="curs-u-clear"></div>
+                                                    </div>
+                                                    <!--RegularC if5-->
+                                                </div>
+                                            </div>
+                                            <!--RegularC if6-->
+                                            <div class="curs-m-ipt">
+                                                <div class="curs-u-ipt curs-u-ipt- curs-u-ipt-">
+                                                    <!--RegularC if7-->
+                                                    <div class="curs-u-label">
+                                                        <div class="curs-u-logo">
+                                                            <div class="curs-u-logo-img2"></div>
+                                                        </div>
+                                                    </div>
+                                                    <input id="psw" autocomplete="off" placeholder="密码" class="curs-input curs-input-lb" type="password" name="password">
+                                                    <!--RegularC if8-->
+                                                    <!--RegularC if9-->
+                                                    <div class="curs-u-tip" style="display: none;">
+                                                        <div class="curs-u-clear"></div>
+                                                    </div>
+                                                    <!--RegularC if10-->
+                                                </div>
+                                            </div>
+                                            <!--RegularC if11-->
+                                            <!--RegularC if12-->
+                                            <div class="curs-m-pop">
+                                                <i class="curs-i"></i>
+                                                <span class="curs-u-info"></span>
+                                                <!--RegularC if13-->
+                                                <!--RegularC if14-->
+                                            </div>
+                                            <div class="xx-curs-m-check">
+                                                <!--RegularC if15-->
+                                                <p class="xx-curs-checkbox-cover">
+                                                    <span class="xx-curs-u-checkbox xx-curs-u-checkbox-selected">
         													<input class="xx-curs-u-agr" checked="checked" id="curs-lg-cb" type="checkbox">
     													</span>
-														<span class="xx-curs-u-tip"><label for="curs-lg-cb">同意并遵守<a href="clause.html" target="_blank">《服务条款》</a></label></span>
-													</p>
-
-													<!--RegularC if16-->
-													<!--RegularC if17-->
-													<p class="xx-curs-checkbox-cover-r">
-														<span class="xx-curs-u-checkbox">
+                                                    <span class="xx-curs-u-tip"><label for="curs-lg-cb">同意并遵守<a href="clause.html" target="_blank">《服务条款》</a></label></span>
+                                                </p>
+                                                <!--RegularC if16-->
+                                                <!--RegularC if17-->
+                                                <p class="xx-curs-checkbox-cover-r">
+                                                    <span class="xx-curs-u-checkbox">
         													
                                                             	<input class="xx-curs-u-agr" id="curs-lg-cb-ulg" type="checkbox">
                                                             
         													
     													</span>
-														<span class="xx-curs-u-tip"><label for="curs-lg-cb-ulg">记住密码</label></span>
-													</p>
-													
+                                                    <span class="xx-curs-u-tip"><label for="curs-lg-cb-ulg">记住密码</label></span>
+                                                </p>
+                                            </div>
+                                            <div class="curs-m-btn">
+                                                <!--RegularC if18-->
+                                                <div class="curs-b-btn curs-btn-blue">登录</div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div style="display: none;">
+                                </div>
+                            </div>
+                            <div class="curs-m-link">
+                                <div class="curs-u-link">
+                                    <a target="_blank" class="curs-lk-left" href="getback.html">忘记密码？</a>
+                                    <!--RegularC if26-->
+                                    <a href="register.html" class="curs-lk-right">去注册</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#curs-lg-cb-ulg").click(function() {
+                $("#curs-lg-cb-ulg").parent(".xx-curs-u-checkbox").toggleClass('xx-curs-u-checkbox-selected');
+            })
+            $("#curs-lg-cb").click(function() {
+                $("#curs-lg-cb").parent(".xx-curs-u-checkbox").toggleClass('xx-curs-u-checkbox-selected');
+                if ($(".xx-curs-u-checkbox").hasClass("xx-curs-u-checkbox-selected")) {
+                    $(".curs-i").css("display", "none");
+                    $(".curs-u-info").css("display", "none");
+                } else {
+                    $(".curs-i").css("display", "block");
+                    $(".curs-u-info").css("display", "block").html("您还未同意服务条款");
+                }
+            })
 
-												</div>
+            // 登录调用ajax后台交互
+            $(".curs-b-btn").click(function() {
 
-												<div class="curs-m-btn">
-													<!--RegularC if18-->
-													<div class="curs-b-btn curs-btn-blue">登录</div>
+                var form = document.lgform;
+                if (form.account.value == "") {
+                    $(".curs-i").css("display", "block");
+                    $(".curs-u-info").css("display", "block").html("请输入用户名！");
+                    form.account.focus();
+                    return false;
+                }
+                if (form.password.value == "") {
+                    $(".curs-i").css("display", "block");
+                    $(".curs-u-info").css("display", "block").html("请输入密码！");
+                    form.password.focus();
+                    return false;
+                }
+                var user = {
+                    loginName: $("#name").val(),
+                    password: $("#psw").val(),
+                    rkey: $("#curs-lg-cb-ulg").is(':checked') ? "1" : ""
+                };
+                //调用AJAX 
+                $.ajax({
+                    async: false,
+                    type: "POST",
+                    url: "user/login?operate=login",
+                    data: user,
+                    dataType: 'json',
+                    success: function(data) {
+                        if (data.status == "FAIL") {
+                            $(".curs-i").css("display", "block");
+                            $(".curs-u-info").css("display", "block").html("请输入正确的用户名和密码！");
+                            return false;
+                        }
+                        var result = data.result;
+                        // 			    				 var result = eval("("+result+")")
+                        console.log(result);
+                        console.log(result.userName, result.role);
 
-												</div>
-											</form>
-										</div>
+                        window.location.href = "index.html?role=" + result.role + "&userName=" + result.userName;
+                    }
+                });
 
-									</div>
-									<div style="display: none;">
-
-									</div>
-
-								</div>
-								<div class="curs-m-link">
-									<div class="curs-u-link">
-
-										<a target="_blank" class="curs-lk-left" href="getback.html">忘记密码？</a>
-
-										<!--RegularC if26-->
-
-										<a href="register.html" class="curs-lk-right">去注册</a>
-
-									</div>
-
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				$("#curs-lg-cb-ulg").click(function(){
-					$("#curs-lg-cb-ulg").parent(".xx-curs-u-checkbox").toggleClass('xx-curs-u-checkbox-selected');
-				})
-				$("#curs-lg-cb").click(function(){
-					$("#curs-lg-cb").parent(".xx-curs-u-checkbox").toggleClass('xx-curs-u-checkbox-selected');
-					if($(".xx-curs-u-checkbox").hasClass("xx-curs-u-checkbox-selected")) {
-						$(".curs-i").css("display","none");
-						$(".curs-u-info").css("display","none");
-					} else {
-						$(".curs-i").css("display","block");
-						$(".curs-u-info").css("display","block").html("您还未同意服务条款");
-					}
-				})
-				
-				// 登录调用ajax后台交互
-			$(".curs-b-btn").click(function() {
-				
-				var form = document.lgform;			
-			if(form.account.value == "") {
-				$(".curs-i").css("display","block");
-				$(".curs-u-info").css("display","block").html("请输入用户名！");
-				form.account.focus();				
-				return false;
-				}
-			if(form.password.value == "") {
-				$(".curs-i").css("display","block");
-				$(".curs-u-info").css("display","block").html("请输入密码！");
-				form.password.focus();
-				return false;
-			}
-			var user = {
-			 loginName: $("#name").val(),
-			    password: $("#psw").val(),
-			    rkey: $("#curs-lg-cb-ulg").is(':checked') ? "1" : ""
-			};
-			     //调用AJAX 
-			     $.ajax(
-			    		 {
-			    			 async: false,
-			    			 type: "POST",
-			    			 url: "user/login?operate=login",
-			    			 data: user,
-			    			 dataType: 'json',
-			    			 success: function(data) {
-			    				 if (data.status == "FAIL") {  
-			 		                $(".curs-i").css("display","block");
-									$(".curs-u-info").css("display","block").html("请输入正确的用户名和密码！");
-			 		                return false;  
-			 		            }
-			    				 var result =data.result;
-// 			    				 var result = eval("("+result+")")
-			    				 console.log(result);
-			    				 console.log(result.userName,result.role);
-			 
-			    				 window.location.href="index.html?role=" + result.role + "&userName=" + result.userName;
-							}
-			    		 });	 
-
-		});
-		$('#psw').bind('keypress', function (event) {
-	        if (event.keyCode == "13") {
-	        	$(".curs-b-btn").click();
-	        }
-	    });
-		$('#name').bind('keypress', function (event) {
-	        if (event.keyCode == "13") {
-	        	$(".curs-b-btn").click();
-	        }
-	    });
-	})
-		</script>
-	</body>
+            });
+            $('#psw').bind('keypress', function(event) {
+                if (event.keyCode == "13") {
+                    $(".curs-b-btn").click();
+                }
+            });
+            $('#name').bind('keypress', function(event) {
+                if (event.keyCode == "13") {
+                    $(".curs-b-btn").click();
+                }
+            });
+        })
+    </script>
+</body>

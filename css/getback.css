@@ -79,9 +79,9 @@ html,body,.g-doc {
 }
 .m-head .logo .link {
 	width: 135px;
-	height: 60px;
+	height: 59px;
 	line-height: 60px;
-	background: url(/res/images/logo.png) center center no-repeat;
+	background: url(../images/logo.png) center center no-repeat;
 }
 a,
 .u-link {

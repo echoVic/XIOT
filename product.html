@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>开发者中心</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/product.css" rel="stylesheet" type="text/css" media="all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="XIOT,cnicg,niot,中科院,广州中科院计算机网络信息中心" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+
+<body>
+    <!--header-->
+    <div class="header">
+        <div class="header-nav">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>XIot</h1>
+                    </a>
+                </div>
+                <div class="navigation">
+                    <nav class="navbar navbar-default">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"> </span>
+									<span class="icon-bar"> </span>
+									<span class="icon-bar"> </span>
+					  			</button>
+                        </div>
+                        <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li>
+                                    <a id="index">首页 <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li>
+                                    <a id="case">成功案例</a>
+                                </li>
+                                <li>
+                                    <a id="discover">发现</a>
+                                </li>
+                                <li>
+                                    <a id="doc">开发文档</a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"> </div>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </nav>
+                </div>
+                <div class="lrbutton">
+                    <a class="btn btn-primary" href="login.html">登录</a>
+                    <a class="btn btn-default" href="register.html">注册</a>
+                </div>
+                <div class="dropdown hidden" id="usercenter">
+                    <button id="username" class="btn btn-success" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   							<span class="caret"></span>
+  							</button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <li><a id="devcenter">开发者中心</a></li>
+                        <li><a id="infoedit">个人资料</a></li>
+                        <li><a id="setting">安全设置</a></li>
+                        <li><a id="logout">退出登录</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="app" class="wrap-content" v-cloak>
+        <div class="wrap-content-main">
+
+            <div class="tab-display">
+                <div class="form-group terminal-message-title container">
+                    <label>查询</label>
+                    <input class="search-input form-control form-control-height" type="text" placeholder="请输入搜索字段" v-model="searchQuery">
+                </div>
+                <simple-grid :off-set="offSet" :locales="locales" :is-show="isShow" :search-key="searchQuery" :data-list="gridData" :columns="gridColumns" :sms-data="smsData" v-on:load-entry="loadCustomer" v-on:delete-entry="deleteCustomer">
+                </simple-grid>
+                <!-- 下面是分页导航部分 author：vic -->
+                <div id="pagination" style="margin:0 auto;" v-show="isShow" class="start-display">
+                    <ul class="pagination">
+                        <li><a v-on:click="cur=1">首页</a></li>
+                        <li v-bind:class="{'disabled' : cur == 1}"><a v-on:click="btnClicksub">上一页</a></li>
+                        <li v-for="index in indexs" v-bind:class="{ 'active': cur == index}">
+                            <a v-on:click="btnClick(index)">{{index}}</a>
+                        </li>
+                        <li v-bind:class="{'disabled' : cur == all}"><a v-on:click="btnClickadd">下一页</a></li>
+                        <li><a v-on:click="cur=all">末页</a></li>
+                        <li><a>共<span class="text-danger"> {{all}} </span>页</a></li>
+                    </ul>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-info" @click="this.show = true">创建</button>
+                </div>
+                <modal-dialog v-bind:show.sync="show" :columns="gridColumns" :item="item" :games="gameData" v-on:saveDialog="saveCustomer">
+                    <header class="dialog-header" slot="header">
+                        <h1 class="dialog-title">{{ item.id ? '修改' : '创建' }}</h1>
+                    </header>
+                    <div class="form-group text-center" slot="footer">
+                        <label></label>
+                        <button class="btn btn-primary" @click="saveCustomer">Save</button>
+                    </div>
+                </modal-dialog>
+            </div>
+            <!-- 以下是表格组件 -->
+            <template id="grid-template">
+					<table class="table table-striped table-bordered">
+						<thead>
+							<tr>
+								<th v-for="col in columns">
+									{{ col.chiName | capitalize}}
+								</th>
+								<th class="text-center">操作</th>
+							</tr>
+						</thead>
+						<tbody>							
+							<tr v-for="(index,entry) in dataList | filterBy searchKey | limitBy 10 offSet">
+								<td v-for="col in columns">
+									<span v-if="col.isKey"><a href="javascript:void(0)" @click="loadEntry(col.name,entry[col.name])">{{ entry[col.name] }}</a></span>			
+									<span v-else>{{ entry[col.name] }}</span>
+								</td>
+								<td class="text-center">
+									<button class="btn btn-danger" @click="deleteEntry(entry)">删除</button>									
+								</td>
+							</tr>
+														
+						</tbody>
+					</table>
+				</template>
+            <!-- 以下是模态框组件 -->
+            <template id="dialog-template">
+					<div class="dialogs">
+						<div class="dialog" v-bind:class="{ 'dialog-active': show }">
+							<div class="dialog-content">
+								<div class="close rotate">
+									<span class="glyphicon glyphicon-remove" @click="close"></span>
+								</div>
+								<slot name="header"></slot>
+								<div class="dialog-body">
+				  					<div v-for="col in columns" v-bind:class="{'hidden' : col.isHide}">
+										<label>{{ col.chiName | capitalize}}</label>
+										<input type="text" v-model="item[col.name]" v-on:keyup.enter="saveDialog" v-on:keyup.esc="close">
+									</div>
+								</div>
+								<slot name="body"></slot>
+								<slot name="footer"></slot>
+							</div>
+						</div>
+						<div class="dialog-overlay"></div>
+					</div>
+				</template>
+        </div>
+    </div>
+    <script src="http://cdn.bootcss.com/vue/1.0.28/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/vue.resource/1.2.0/vue-resource.min.js"></script>
+    <script>
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return (r[2]);
+            return null;
+        }
+        var userName = GetQueryString("userName");
+        var role = GetQueryString("role");
+        console.log(userName, role);
+        $(document).ready(function() {
+            if ((userName != "null") && (userName != "") && (userName != null)) {
+                $(".lrbutton").addClass("hidden");
+                $("#usercenter").removeClass("hidden");
+                $("#username").text(userName);
+            }
+
+            $("#index").click(function() {
+                window.location.href = "index.html?role=" + role + "&userName=" + userName;
+            })
+            $("#case").click(function() {
+                window.location.href = "case.html?role=" + role + "&userName=" + userName;
+            })
+            $("#discover").click(function() {
+                window.location.href = "discover.html?role=" + role + "&userName=" + userName;
+            })
+            $("#doc").click(function() {
+                window.location.href = "doc.html?role=" + role + "&userName=" + userName;
+            })
+            $("#devcenter").click(function() {
+                window.location.href = "product.html?userName=" + userName;
+            })
+            $("#infoedit").click(function() {
+                if (role == 0) {
+                    window.location.href = "perinfo.html?userName=" + userName;
+                } else if (role == 1) {
+                    window.location.href = "cominfo.html?userName=" + userName;
+                }
+            })
+            $("#setting").click(function() {
+                window.location.href = "settings.html?userName=" + userName;
+            })
+            $("#logout").click(function() {
+                $.ajax({
+                    type: "post",
+                    url: "user/logout",
+                    async: true,
+                    success: function(data) {
+                        window.location.href = "index.html";
+                    }
+                });
+            })
+        })
+    </script>
+    <script>
+        Vue.component('simple-grid', {
+            template: '#grid-template',
+            props: ['dataList', 'columns', 'searchKey', 'isShow', 'offSet', 'smsData', 'locales'],
+            methods: {
+                loadEntry: function(colname, key) {
+                    this.$dispatch('load-entry', colname, key);
+                },
+                deleteEntry: function(entry) {
+                    this.$dispatch('delete-entry', entry);
+                },
+                freeEntry: function(entry) {
+                    this.$dispatch('free-entry', entry);
+                }
+            }
+        });
+        Vue.component('modal-dialog', {
+            template: '#dialog-template',
+            props: ['show', 'columns', 'item', 'games'],
+            methods: {
+                close: function() {
+                    this.show = false;
+                },
+                saveDialog: function() {
+                    this.$dispatch('save');
+                }
+            }
+        });
+    </script>
+    <script>
+        Vue.http.options.emulateHTTP = true;
+        Vue.http.options.emulateJSON = true;
+        var demo = new Vue({
+            el: '#app',
+            data: {
+                cur: 1, // 当前页码
+                all: 1, // 总页面
+                offSet: 0, //  开始的偏移量
+                len: 0, // 返回数据的数量
+                itemnum: 10,
+                selected: '',
+                devNum: '',
+                searchQuery: '',
+                isShow: true,
+                show: false,
+                title: '',
+                gridColumns: [{
+                    name: 'pId',
+                    chiName: '产品序列号',
+                    isHide: true
+                }, {
+                    name: 'pName',
+                    isKey: true,
+                    chiName: '产品名称'
+                }, {
+                    name: 'pIndustry',
+                    chiName: '产品行业'
+                }, {
+                    name: 'pClass',
+                    chiName: '产品类别'
+                }, {
+                    name: 'pSchedules',
+                    chiName: '产品进度',
+                }, {
+                    name: 'pDesc',
+                    chiName: '产品简介'
+                }, {
+                    name: 'pOS',
+                    chiName: '操作系统'
+                }, {
+                    name: 'networkOperator',
+                    chiName: '网络运营商'
+                }, {
+                    name: 'networkWay',
+                    chiName: '联网方式'
+                }, {
+                    name: 'protocol',
+                    chiName: '设备接入协议'
+                }, {
+                    name: 'accessWay',
+                    chiName: '设备接入方式'
+                }, {
+                    name: 'apikey',
+                    chiName: 'APIKey'
+                }, {
+                    name: 'secret',
+                    chiName: '接口秘钥'
+                }, {
+                    name: 'registerTime',
+                    chiName: '创建时间',
+                    isHide: true
+                }],
+                gridData: [],
+                apiUrl: 'product',
+                item: {},
+            },
+            events: {
+                save: function() {
+                    this.saveCustomer();
+                }
+            },
+            ready: function() {
+                this.getCustomers();
+            },
+            computed: {
+                all: function() {
+                    var pageNum = Math.ceil(this.len / this.itemnum);
+                    return pageNum;
+                },
+                offSet: function() {
+                    return (this.cur - 1) * this.itemnum;
+                },
+                indexs: function() {
+                    var left = 1;
+                    var right = this.all;
+                    var ar = [];
+                    if (this.all >= 11) {
+                        if (this.cur > 5 && this.cur < this.all - 4) {
+                            left = this.cur - 5;
+                            right = this.cur + 4;
+                        } else {
+                            if (this.cur <= 5) {
+                                left = 1;
+                                right = 10;
+                            } else {
+                                right = this.all;
+                                left = this.all - 9;
+                            }
+                        }
+                    }
+                    while (left <= right) {
+                        ar.push(left);
+                        left++;
+                    }
+                    return ar;
+                }
+            },
+            methods: {
+                btnClick: function(data) { //页码点击事件
+                    if (data != this.cur) {
+                        this.cur = data;
+                    }
+                },
+                btnClicksub: function() {
+                    //页码点击事件
+                    if (this.cur > 1) {
+                        this.cur = this.cur - 1;
+                    }
+                },
+                btnClickadd: function() {
+                    //页码点击事件
+                    if (this.cur < this.all) {
+                        this.cur = this.cur + 1;
+                    }
+                },
+                closeDialog: function() {
+                    this.show = false;
+                },
+                loadCustomer: function(colname, key) {
+                    var vm = this;
+                    vm.gridData.forEach(function(item) {
+                        if (item[colname] === key) {
+
+                            var newItem = JSON.parse(JSON.stringify(item));
+                            vm.$set('item', newItem);
+                            vm.$set('show', true);
+                            return;
+                        }
+                    })
+                },
+                saveCustomer: function() {
+                    this.item.id ? this.updateCustomer() : this.createCustomer();
+                    this.show = false;
+                },
+                getCustomers: function() {
+                    var vm = this;
+                    vm.$http.get(vm.apiUrl + "/product?pageSize=50&currentPage=1")
+                        .then((response) => {
+                            var backData = response.data.result;
+                            vm.$set('gridData', backData.list);
+                            vm.len = vm.gridData.length;
+                        })
+                },
+                createCustomer: function() {
+                    var vm = this;
+                    vm.$http.post(vm.apiUrl + "/add", vm.item)
+                        .then((response) => {
+                            vm.$set('item', {});
+                            vm.getCustomers();
+                            var backData = response.data;
+                            if (backData.code == 402) {
+                                alert("产品已经存在");
+                            }
+                        })
+                    this.show = false
+                },
+                updateCustomer: function() {
+                    var vm = this;
+                    vm.$http.post(this.apiUrl + "/update", vm.item)
+                        .then((response) => {
+                            vm.getCustomers();
+                            var backData = response.data;
+                            if (backData.code == 402) {
+                                alert("产品已经存在");
+                            }
+                        })
+                },
+                deleteCustomer: function(customer) {
+                    var vm = this;
+                    if (confirm("確定刪除选中项吗？")) {
+                        vm.$http.post(this.apiUrl + '/delete', customer)
+                            .then((response) => {
+                                vm.getCustomers();
+                            })
+                    }
+                }
+            }
+        });
+        demo.$watch('show', function(newVal, oldVal) {
+            if (!newVal) {
+                this.item = {};
+            }
+        });
+    </script>
+</body>
+
+</html>

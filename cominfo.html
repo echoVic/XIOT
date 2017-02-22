@@ -1,92 +1,80 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title>企业资料</title>
-		<link rel="stylesheet" type="text/css" href="css/cominfo.css" />
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-	</head>
+<head>
+    <meta charset="UTF-8">
+    <title>企业资料</title>
+    <link rel="stylesheet" type="text/css" href="css/cominfo.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+</head>
 
-	<body>
-
-		<div class="g-doc">
-			<div class="g-hd">
-				<div class="g-hdc">
-					<div class="m-head">
-						<div class="logo">
-							<a href="https://app.netease.im/index" class="link"></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="g-bd">
-				<div class="g-bdc">
-					<div id="cominfo">
-						<div class="wrap-content">
-							<div class="content-title">
-								<span>企业资料</span>
-								
-								<span id="edit-btn" class="edit-icon" style="background-image: url(images/edit.png);"></span>
-							</div>
-							<div class="content-main">
-								<div class="con-wrap">
-									<form class="cominfo-form" name="infoform">
-										<section>
-											<div class="reg-item">
-												<div class="input-label">
-													<label>用户名:</label>
-												</div>
-												<input disabled="disabled" type="text" name="user" class="outline-input text-user">
-	
-												<li class="tip-info user-info"></li>
-											</div>
-											
-											<div class="reg-item">
-												<div class="input-label">
-													<label>邮箱:</label>
-												</div>
-												<input disabled="disabled" autocomplete="off" id="email" type="text" name="email" class="outline-input text-email" placeholder="请输入邮箱" value="无">
-	
-												<li class="tip-info email-info"></li>
-											</div>
-										</section>	
-											
-										<section class="company-info">
-											<div class="setn-title">
-												<span class="account-icon" style="background-image: url(images/company-icon.png);"></span>
-												<span>企业信息</span>
-											</div>
-											
-											<div class="reg-item">
-												<div class="input-label">
-													<label>企业名称:</label>
-												</div>
-												<input disabled="disabled" type="text" name="company" class="outline-input text-company" placeholder="请输入企业名称" value="无">
-	
-												<li class="tip-info company-info"></li>
-											</div>
-											
-											<div class="reg-item">
-												<div class="input-label">
-													<label>企业法人:</label>
-												</div>
-												<input disabled="disabled" type="text" name="corporation" class="outline-input text-corporation" placeholder="请输入企业法人姓名" value="无">
-	
-												<li class="tip-info corporation-info"></li>
-											</div>
-											
-											<div class="reg-item">
-												<div class="input-label">
-													<label>所属行业:</label>
-												</div>
-												<!--<input disabled="disabled" type="text" name="industry" class="outline-input text-industry" value="无">-->
-												<input disabled="disabled" type="text" name="industry" class="outline-input text-industry" value="无">
-												
-												<div class="edit-info hidden">
-													<select id="sel_industry" class="select-industry">
+<body>
+    <div class="g-doc">
+        <div class="g-hd">
+            <div class="g-hdc">
+                <div class="m-head">
+                    <div class="logo">
+                        <a href="index.html" class="link"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="g-bd">
+            <div class="g-bdc">
+                <div id="cominfo">
+                    <div class="wrap-content">
+                        <div class="content-title">
+                            <span>企业资料</span>
+                            <span id="edit-btn" class="edit-icon" style="background-image: url(images/edit.png);"></span>
+                        </div>
+                        <div class="content-main">
+                            <div class="con-wrap">
+                                <form class="cominfo-form" name="infoform">
+                                    <section>
+                                        <div class="reg-item">
+                                            <div class="input-label">
+                                                <label>用户名:</label>
+                                            </div>
+                                            <input disabled="disabled" type="text" name="user" class="outline-input text-user">
+                                            <li class="tip-info user-info"></li>
+                                        </div>
+                                        <div class="reg-item">
+                                            <div class="input-label">
+                                                <label>邮箱:</label>
+                                            </div>
+                                            <input disabled="disabled" autocomplete="off" id="email" type="text" name="email" class="outline-input text-email" placeholder="请输入邮箱" value="无">
+                                            <li class="tip-info email-info"></li>
+                                        </div>
+                                    </section>
+                                    <section class="company-info">
+                                        <div class="setn-title">
+                                            <span class="account-icon" style="background-image: url(images/company-icon.png);"></span>
+                                            <span>企业信息</span>
+                                        </div>
+                                        <div class="reg-item">
+                                            <div class="input-label">
+                                                <label>企业名称:</label>
+                                            </div>
+                                            <input disabled="disabled" type="text" name="company" class="outline-input text-company" placeholder="请输入企业名称" value="无">
+                                            <li class="tip-info company-info"></li>
+                                        </div>
+                                        <div class="reg-item">
+                                            <div class="input-label">
+                                                <label>企业法人:</label>
+                                            </div>
+                                            <input disabled="disabled" type="text" name="corporation" class="outline-input text-corporation" placeholder="请输入企业法人姓名" value="无">
+                                            <li class="tip-info corporation-info"></li>
+                                        </div>
+                                        <div class="reg-item">
+                                            <div class="input-label">
+                                                <label>所属行业:</label>
+                                            </div>
+                                            <!--<input disabled="disabled" type="text" name="industry" class="outline-input text-industry" value="无">-->
+                                            <input disabled="disabled" type="text" name="industry" class="outline-input text-industry" value="无">
+                                            <div class="edit-info hidden">
+                                                <select id="sel_industry" class="select-industry">
 	                    								<option value="选择行业">选择行业</option>
 	                                                    <option value="计算机硬件及网络设备">计算机硬件及网络设备</option>
 	                                                    <option value="计算机软件">计算机软件</option>
@@ -136,396 +124,381 @@
 	                                                    <option value="跨领域经营">跨领域经营</option>
 	                                                    <option value="其它">其它</option>
 	                                                   </select>
-												</div>
-												<li class="tip-info industry-info"></li>
-											</div>									
-											
-											<div class="reg-item">
-												<div class="input-label">
-													<label>企业所在地:</label>
-												</div>
-												<input disabled="disabled" type="text" name="location" class="outline-input text-location" value="无">
-												<div class="edit-info hidden">
-													<select class="location-sel s_province" id="s_province" name="s_province"></select>
-													<select class="location-sel s_city" id="s_city" name="s_city"></select>
-													<select class="location-sel s_county" id="s_county" name="s_county"></select>
-													<script class="resources library" src="js/area.js" type="text/javascript"></script>
-		
-													<script type="text/javascript">
-														_init_area();
-													</script>
-												</div>											
-	
-												<li class="tip-info location-info"></li>
-											</div>
-											
-											<div class="reg-item">
-												<div class="input-label">
-													<label>详细地址:</label>
-													<i class="require" style="display: none;"></i>
-												</div>
-												<input disabled="disabled" autocomplete="off" type="text" name="detailadd" class="outline-input text-detailadd" placeholder="不需要重复填写省市区，不少于5个字" value="无">
-	
-												<li class="tip-info detailadd-info"></li>
-											</div>
-											
-											<div class="reg-item">
-												<div class="input-label">
-													<label>企业介绍:</label>
-												</div>
-												<textarea disabled="disabled" name="summary" class="outline-input text-summary" autocomplete="off">无
+                                            </div>
+                                            <li class="tip-info industry-info"></li>
+                                        </div>
+                                        <div class="reg-item">
+                                            <div class="input-label">
+                                                <label>企业所在地:</label>
+                                            </div>
+                                            <input disabled="disabled" type="text" name="location" class="outline-input text-location" value="无">
+                                            <div class="edit-info hidden">
+                                                <select class="location-sel s_province" id="s_province" name="s_province"></select>
+                                                <select class="location-sel s_city" id="s_city" name="s_city"></select>
+                                                <select class="location-sel s_county" id="s_county" name="s_county"></select>
+                                                <script class="resources library" src="js/area.js" type="text/javascript"></script>
+                                                <script type="text/javascript">
+                                                    _init_area();
+                                                </script>
+                                            </div>
+                                            <li class="tip-info location-info"></li>
+                                        </div>
+                                        <div class="reg-item">
+                                            <div class="input-label">
+                                                <label>详细地址:</label>
+                                                <i class="require" style="display: none;"></i>
+                                            </div>
+                                            <input disabled="disabled" autocomplete="off" type="text" name="detailadd" class="outline-input text-detailadd" placeholder="不需要重复填写省市区，不少于5个字" value="无">
+                                            <li class="tip-info detailadd-info"></li>
+                                        </div>
+                                        <div class="reg-item">
+                                            <div class="input-label">
+                                                <label>企业介绍:</label>
+                                            </div>
+                                            <textarea disabled="disabled" name="summary" class="outline-input text-summary" autocomplete="off">无
 												</textarea>
-	
-												<li class="tip-info summary-info"></li>
-											</div>
-										</section>
-	
-	
-										<section class="contact-info">
-											<div class="setn-title">
-												<span class="account-icon" style="background-image: url(images/contact-icon.png);"></span>
-												<span>联系人信息</span>
-											</div>	
-											<div class="reg-item">
-												<div class="input-label">
-													<label>企业联系人:</label>
-												</div>
-												<input disabled="disabled" autocomplete="off" type="text" name="contact" class="outline-input text-contact" placeholder="请输入企业联系人" value="无">
-	
-												<li class="tip-info contact-info"></li>
-											</div>
-											
-											<div class="reg-item">
-												<div class="input-label">
-													<label>所属部门:</label>												
-												</div>
-												<input disabled="disabled" autocomplete="off" type="text" name="department" class="outline-input text-department" placeholder="请输入联系人所属部门" value="无">
-	
-												<li class="tip-info department-info"></li>
-											</div>
-											
-											<div class="reg-item">
-												<div class="input-label">
-													<label>联系人手机:</label>												
-												</div>
-												<input disabled="disabled" autocomplete="off" type="text" name="mobile" class="outline-input text-mobile" placeholder="请输入11位手机号" value="无">
-	
-												<li class="tip-info mobile-info"></li>
-											</div>										
-											
-										</section>
+                                            <li class="tip-info summary-info"></li>
+                                        </div>
+                                    </section>
+                                    <section class="contact-info">
+                                        <div class="setn-title">
+                                            <span class="account-icon" style="background-image: url(images/contact-icon.png);"></span>
+                                            <span>联系人信息</span>
+                                        </div>
+                                        <div class="reg-item">
+                                            <div class="input-label">
+                                                <label>企业联系人:</label>
+                                            </div>
+                                            <input disabled="disabled" autocomplete="off" type="text" name="contact" class="outline-input text-contact" placeholder="请输入企业联系人" value="无">
+                                            <li class="tip-info contact-info"></li>
+                                        </div>
+                                        <div class="reg-item">
+                                            <div class="input-label">
+                                                <label>所属部门:</label>
+                                            </div>
+                                            <input disabled="disabled" autocomplete="off" type="text" name="department" class="outline-input text-department" placeholder="请输入联系人所属部门" value="无">
+                                            <li class="tip-info department-info"></li>
+                                        </div>
+                                        <div class="reg-item">
+                                            <div class="input-label">
+                                                <label>联系人手机:</label>
+                                            </div>
+                                            <input disabled="disabled" autocomplete="off" type="text" name="mobile" class="outline-input text-mobile" placeholder="请输入11位手机号" value="无">
+                                            <li class="tip-info mobile-info"></li>
+                                        </div>
+                                    </section>
+                                    <div class="reg-item">
+                                        <input id="cominfo-btn" type="button" class="reg-btn check-account hidden" value="保存">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function() {
+            //				console.log($(".text-industry").val())
+            function GetQueryString(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) return (r[2]);
+                return null;
+            }
+            var user = GetQueryString("userName");
+            $('.text-user').val(user);
 
-										<div class="reg-item">
-											<input id="cominfo-btn" type="button" class="reg-btn check-account hidden" value="保存">
-										</div>
+            // 刷新页面获取资料
+            $.ajax({
+                type: "get",
+                url: "user/getInfo",
+                async: true,
+                dataType: "json",
+                success: function(data) {
+                    var result = data.result;
+                    //						var result = eval("("+result+")")
+                    if (data.status = 'SUCCESS') {
+                        var userName = result.userName;
+                        var email = result.email;
+                        var company = result.companyName
+                        var telphone = result.telphone;
+                        var legalPerson = result.legalPerson;
+                        var industry = result.industry;
+                        var address = result.address;
+                        var add_array = address.toString().split(" ");
+                        var location = add_array[0];
+                        var detailadd = add_array[1];
+                        var contacts = result.contacts;
+                        var department = result.department;
+                        var intro = result.intro;
 
-									</form>
-								</div>
-							</div>
+                        if (email) {
+                            $(".text-email").val(email);
+                        } else {
+                            $(".text-email").val('无');
+                        }
 
-						</div>
-					</div>
+                        if (company) {
+                            $(".text-company").val(company);
+                        } else {
+                            $(".text-company").val('无');
+                        }
 
-				</div>
-			</div>
-		</div>
-		<script type="text/javascript">
-			$(function() {
-//				console.log($(".text-industry").val())
-				function GetQueryString(name) {
-			   		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
-			   		var r = window.location.search.substr(1).match(reg);
-			   		if (r!=null) return (r[2]); return null;
-				}
-				var user = GetQueryString("userName");
-				$('.text-user').val(user);
-				
-				// 刷新页面获取资料
-				$.ajax({
-					type:"get",
-					url:"user/getInfo",
-					async:true,
-					dataType:"json",
-					success:function(data){
-						var result = data.result;
-//						var result = eval("("+result+")")
-						if(data.status = 'SUCCESS') {
-							var userName = result.userName;
-							var email = result.email;
-							var company = result.companyName
-							var telphone = result.telphone;
-							var legalPerson = result.legalPerson;
-							var industry = result.industry;
-							var address = result.address;
-							var add_array = address.toString().split(" ");
-							var location = add_array[0];
-							var detailadd = add_array[1];
-							var contacts = result.contacts;
-							var department = result.department;
-							var intro = result.intro;
-							
-							if(email) {
-								$(".text-email").val(email);
-							} else {
-								$(".text-email").val('无');
-							}
-							
-							if(company) {
-								$(".text-company").val(company);
-							} else {
-								$(".text-company").val('无');
-							}								
-							
-							if(legalPerson) {
-								$(".text-corporation").val(legalPerson);
-							} else {
-								$(".text-corporation").val('无');
-							}
-							
-							if(industry) {
-								$(".text-industry").val(industry);
-							} else {
-								$(".text-industry").val('无');
-							}							
-							
-							if(location) {
-								$(".text-location").val(location);
-							} else {
-								$(".text-location").val('无');
-							}
-							
-							if(detailadd) {
-								$(".text-detailadd").val(detailadd);
-							} else {
-								$(".text-detailadd").val('无');
-							}
-							
-							if(intro) {
-								$(".text-summary").val(intro);
-							} else {
-								$(".text-summary").val('无');
-							}
-							
-							if(contacts) {
-								$(".text-contact").val(contacts);
-							} else {
-								$(".text-contact").val('无');
-							}
-							
-							if(department) {
-								$(".text-department").val(department);
-							} else {
-								$(".text-department").val('无');
-							}
-							
-							if(telphone) {
-								$(".text-mobile").val(telphone);
-							} else {
-								$(".text-mobile").val('无');
-							}							
-						}							
-					}
-				});
-				
-				// 开启个人资料编辑
-				$("#edit-btn").click(function() {
-					var fr_edit = document.infoform;
-					
-					var edit_company = fr_edit.company.value;
-					var edit_corporation = fr_edit.corporation.value;
-					var edit_industry = fr_edit.industry.value;	
-					
-					var edit_location = fr_edit.location.value;
-					var location_array = edit_location.toString().split("-")
-					var edit_lo_province = location_array[0];
-					var edit_lo_city = location_array[1];
-					var edit_lo_county = location_array[2];					
-					if (edit_location == '无') {
-						_init_area();
-						edit_location = '省份 地级市 区、县';
-					} else {
-						_init_area();
-						$("#s_province option[value='"+edit_lo_province+"']").attr("selected","selected");
-						change(1);
-//						console.log(document.getElementById('s_province').selectedIndex)
-						$("#s_city option[value='"+edit_lo_city+"']").attr("selected","selected");
-						change(2)
-						$("#s_county option[value='"+edit_lo_county+"']").attr("selected","selected");
-					}
+                        if (legalPerson) {
+                            $(".text-corporation").val(legalPerson);
+                        } else {
+                            $(".text-corporation").val('无');
+                        }
 
-					var edit_detailadd = fr_edit.detailadd.value;
-					var edit_summary = fr_edit.summary.value;
-					console.log(edit_summary)
-					var edit_contact = fr_edit.contact.value;
-					var edit_department = fr_edit.department.value;
-					var edit_mobile = fr_edit.mobile.value;
-					
-					$(".text-company,.text-corporation,.text-detailadd,.text-mobile,.text-contact,.text-summary,.text-department").removeAttr("disabled");
-					
-					if (edit_company == '无') {
-						$('.text-company').val('');
-					} else {
-						$('.text-company').val(edit_company);
-					}
-					
-					if (edit_corporation == '无') {
-						$('.text-corporation').val('');
-					} else {
-						$('.text-corporation').val(edit_corporation);
-					}
+                        if (industry) {
+                            $(".text-industry").val(industry);
+                        } else {
+                            $(".text-industry").val('无');
+                        }
 
-					$("#sel_industry option[value='"+edit_industry+"']").attr("selected","selected");
-					
-					if (edit_detailadd == '无') {
-						$('.text-detailadd').val('');
-					} else {
-						$('.text-detailadd').val(edit_detailadd);
-					}
-					
-					if (edit_summary == '无') {
-						$('.text-summary').val('');
-					} else {
-						$('.text-summary').val(edit_summary);
-					}
-					
-					if (edit_contact == '无') {
-						$('.text-contact').val('');
-					} else {
-						$('.text-contact').val(edit_contact);
-					}
-					
-					if (edit_department == '无') {
-						$('.text-department').val('');
-					} else {
-						$('.text-department').val(edit_department);
-					}
-					
-					if (edit_mobile == '无') {
-						$('.text-mobile').val('');
-					} else {
-						$('.text-mobile').val(edit_mobile);
-					}				
+                        if (location) {
+                            $(".text-location").val(location);
+                        } else {
+                            $(".text-location").val('无');
+                        }
 
-					$(".text-industry,.text-location").addClass("hidden");
-					$(".edit-info,.check-account").removeClass("hidden");
-				});
-				
-				 //保存并提交
-				$("#cominfo-btn").click(function() {
-					var fr = document.infoform;
-					var user = fr.user.value;
-					var email = fr.email.value;
-					var company = fr.company.value;
-					var corporation = fr.corporation.value;
-					var industry = $("#sel_industry option:selected").val();
-					var lo_province = $("#s_province option:selected").val();
-					var lo_city = $("#s_city option:selected").val();
-					var lo_county = $("#s_county option:selected").val();
-					var location = lo_province + '-' + lo_city + '-' + lo_county;
-					var detailadd = fr.detailadd.value;
-					var address = location + " " + detailadd;
-					var summary = fr.summary.value;
-					var contact = fr.contact.value;
-					var department = fr.department.value;
-					var mobile = fr.mobile.value;					
-					
-//					if(!(email.match(/^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/))) {
-//						$(".email-info").html("请输入正确的邮箱格式！");
-//						fr.email.focus();
-//						return false;
-//					} else {
-//						$(".email-info").html("");
-//					}
-					
-					if(!(/^1[34578]\d{9}$/.test(mobile))) {
-						$(".mobile-info").html("请输入正确的手机号！");
-						fr.mobile.focus();
-						return false;
-					} else {
-						$(".mobile-info").html("");
-					}
-					
-					if(company == '') {
-						$(".text-company").val('无');
-					} else {
-						$(".text-company").val(company);
-					}
-					
-					if(corporation == '') {
-						$(".text-corporation").val('无');
-					} else {
-						$(".text-corporation").val(corporation);
-					}
-					
-					if(industry == "选择行业") {
-						$(".text-industry").val('无');
-					} else {
-						$(".text-industry").val(industry);
-					}
-					
-					if(lo_province == "省份") {
-						$(".text-location").val('无');
-					} else {
-						$(".text-location").val(location);
-					}					
-					
-					if(detailadd == '') {
-						$(".text-detailadd").val('无');
-					} else {
-						$(".text-detailadd").val(detailadd);
-					}
-					
-					if(summary == '') {
-						$(".text-summary").val('无');
-					} else {
-						$(".text-summary").val(summary);
-					}
-					
-					if(contact == '') {
-						$(".text-contact").val('无');
-					} else {
-						$(".text-contact").val(contact);
-					}
-					
-					if(department == '') {
-						$(".text-department").val('无');
-					} else {
-						$(".text-department").val(department);
-					}
-					
-					if(mobile == '') {
-						$(".text-mobile").val('无');
-					} else {
-						$(".text-mobile").val(mobile);
-					}					
-					
-					$(".text-company,.text-corporation,.text-industry,.text-location,.text-detailadd,.text-summary,.text-contact,.text-department,.text-mobile").attr("disabled",true);
-					$(".text-industry,.text-location").removeClass("hidden");
-					$(".edit-info,.check-account").addClass("hidden");
-					
-					var updateCompany = {
-						userName: user,
-						email: email,
-						companyName: company,
-						legalPerson: corporation,
-						industry: industry,
-						address: address,
-						intro: summary,
-						contacts: contact,
-						department: department,						
-						telphone: mobile
-						
-					}
-					$.ajax({
-						type:"post",
-						url:"user/updateCompanyInfo",
-						async:true,
-						data:updateCompany,
-						dataType:'json'
-					});
-				})
-			})
-		</script>
-	</body>
+                        if (detailadd) {
+                            $(".text-detailadd").val(detailadd);
+                        } else {
+                            $(".text-detailadd").val('无');
+                        }
+
+                        if (intro) {
+                            $(".text-summary").val(intro);
+                        } else {
+                            $(".text-summary").val('无');
+                        }
+
+                        if (contacts) {
+                            $(".text-contact").val(contacts);
+                        } else {
+                            $(".text-contact").val('无');
+                        }
+
+                        if (department) {
+                            $(".text-department").val(department);
+                        } else {
+                            $(".text-department").val('无');
+                        }
+
+                        if (telphone) {
+                            $(".text-mobile").val(telphone);
+                        } else {
+                            $(".text-mobile").val('无');
+                        }
+                    }
+                }
+            });
+
+            // 开启个人资料编辑
+            $("#edit-btn").click(function() {
+                var fr_edit = document.infoform;
+
+                var edit_company = fr_edit.company.value;
+                var edit_corporation = fr_edit.corporation.value;
+                var edit_industry = fr_edit.industry.value;
+
+                var edit_location = fr_edit.location.value;
+                var location_array = edit_location.toString().split("-")
+                var edit_lo_province = location_array[0];
+                var edit_lo_city = location_array[1];
+                var edit_lo_county = location_array[2];
+                if (edit_location == '无') {
+                    _init_area();
+                    edit_location = '省份 地级市 区、县';
+                } else {
+                    _init_area();
+                    $("#s_province option[value='" + edit_lo_province + "']").attr("selected", "selected");
+                    change(1);
+                    //						console.log(document.getElementById('s_province').selectedIndex)
+                    $("#s_city option[value='" + edit_lo_city + "']").attr("selected", "selected");
+                    change(2)
+                    $("#s_county option[value='" + edit_lo_county + "']").attr("selected", "selected");
+                }
+
+                var edit_detailadd = fr_edit.detailadd.value;
+                var edit_summary = fr_edit.summary.value;
+                console.log(edit_summary)
+                var edit_contact = fr_edit.contact.value;
+                var edit_department = fr_edit.department.value;
+                var edit_mobile = fr_edit.mobile.value;
+
+                $(".text-company,.text-corporation,.text-detailadd,.text-mobile,.text-contact,.text-summary,.text-department").removeAttr(
+                    "disabled");
+
+                if (edit_company == '无') {
+                    $('.text-company').val('');
+                } else {
+                    $('.text-company').val(edit_company);
+                }
+
+                if (edit_corporation == '无') {
+                    $('.text-corporation').val('');
+                } else {
+                    $('.text-corporation').val(edit_corporation);
+                }
+
+                $("#sel_industry option[value='" + edit_industry + "']").attr("selected", "selected");
+
+                if (edit_detailadd == '无') {
+                    $('.text-detailadd').val('');
+                } else {
+                    $('.text-detailadd').val(edit_detailadd);
+                }
+
+                if (edit_summary == '无') {
+                    $('.text-summary').val('');
+                } else {
+                    $('.text-summary').val(edit_summary);
+                }
+
+                if (edit_contact == '无') {
+                    $('.text-contact').val('');
+                } else {
+                    $('.text-contact').val(edit_contact);
+                }
+
+                if (edit_department == '无') {
+                    $('.text-department').val('');
+                } else {
+                    $('.text-department').val(edit_department);
+                }
+
+                if (edit_mobile == '无') {
+                    $('.text-mobile').val('');
+                } else {
+                    $('.text-mobile').val(edit_mobile);
+                }
+
+                $(".text-industry,.text-location").addClass("hidden");
+                $(".edit-info,.check-account").removeClass("hidden");
+            });
+
+            //保存并提交
+            $("#cominfo-btn").click(function() {
+                var fr = document.infoform;
+                var user = fr.user.value;
+                var email = fr.email.value;
+                var company = fr.company.value;
+                var corporation = fr.corporation.value;
+                var industry = $("#sel_industry option:selected").val();
+                var lo_province = $("#s_province option:selected").val();
+                var lo_city = $("#s_city option:selected").val();
+                var lo_county = $("#s_county option:selected").val();
+                var location = lo_province + '-' + lo_city + '-' + lo_county;
+                var detailadd = fr.detailadd.value;
+                var address = location + " " + detailadd;
+                var summary = fr.summary.value;
+                var contact = fr.contact.value;
+                var department = fr.department.value;
+                var mobile = fr.mobile.value;
+
+                //					if(!(email.match(/^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/))) {
+                //						$(".email-info").html("请输入正确的邮箱格式！");
+                //						fr.email.focus();
+                //						return false;
+                //					} else {
+                //						$(".email-info").html("");
+                //					}
+
+                if (!(/^1[34578]\d{9}$/.test(mobile))) {
+                    $(".mobile-info").html("请输入正确的手机号！");
+                    fr.mobile.focus();
+                    return false;
+                } else {
+                    $(".mobile-info").html("");
+                }
+
+                if (company == '') {
+                    $(".text-company").val('无');
+                } else {
+                    $(".text-company").val(company);
+                }
+
+                if (corporation == '') {
+                    $(".text-corporation").val('无');
+                } else {
+                    $(".text-corporation").val(corporation);
+                }
+
+                if (industry == "选择行业") {
+                    $(".text-industry").val('无');
+                } else {
+                    $(".text-industry").val(industry);
+                }
+
+                if (lo_province == "省份") {
+                    $(".text-location").val('无');
+                } else {
+                    $(".text-location").val(location);
+                }
+
+                if (detailadd == '') {
+                    $(".text-detailadd").val('无');
+                } else {
+                    $(".text-detailadd").val(detailadd);
+                }
+
+                if (summary == '') {
+                    $(".text-summary").val('无');
+                } else {
+                    $(".text-summary").val(summary);
+                }
+
+                if (contact == '') {
+                    $(".text-contact").val('无');
+                } else {
+                    $(".text-contact").val(contact);
+                }
+
+                if (department == '') {
+                    $(".text-department").val('无');
+                } else {
+                    $(".text-department").val(department);
+                }
+
+                if (mobile == '') {
+                    $(".text-mobile").val('无');
+                } else {
+                    $(".text-mobile").val(mobile);
+                }
+
+                $(
+                    ".text-company,.text-corporation,.text-industry,.text-location,.text-detailadd,.text-summary,.text-contact,.text-department,.text-mobile"
+                ).attr("disabled", true);
+                $(".text-industry,.text-location").removeClass("hidden");
+                $(".edit-info,.check-account").addClass("hidden");
+
+                var updateCompany = {
+                    userName: user,
+                    email: email,
+                    companyName: company,
+                    legalPerson: corporation,
+                    industry: industry,
+                    address: address,
+                    intro: summary,
+                    contacts: contact,
+                    department: department,
+                    telphone: mobile
+
+                }
+                $.ajax({
+                    type: "post",
+                    url: "user/updateCompanyInfo",
+                    async: true,
+                    data: updateCompany,
+                    dataType: 'json'
+                });
+            })
+        })
+    </script>
+</body>
 
 </html>
